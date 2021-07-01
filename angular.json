@@ -102,5 +102,8 @@
       }
     }
   },
-  "defaultProject": "TunArtisantFront"
+  "defaultProject": "TunArtisantFront",
+  "cli": {
+    "analytics": false
+  }
 }

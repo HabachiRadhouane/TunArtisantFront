@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ShowEventsComponent } from './Event/show-events/show-events.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ShowUsersComponent } from './User/show-users/show-users.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ShowEventsComponent,
+    ShowUsersComponent,
     
   ],
   imports: [
