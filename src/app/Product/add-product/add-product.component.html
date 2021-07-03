@@ -1,0 +1,61 @@
+
+<!-- Page Content -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 text-center">
+      <form #form="ngForm" form class="form-horizontal">
+        <div class="table">
+          <div class="row">
+            <div class="col-md-6 form-group">
+              <input placeholder="First Name" name="title" class="form-control ng-untouched ng-pristine ng-valid"  [(ngModel)]="productService.newProduct.title" #reqfname="ngModel" required minlength="3">
+              <div *ngIf="reqfname.invalid && reqfname.touched">
+                <div class="alert alert-danger" *ngIf="reqfname.errors.required">Field required</div>
+                <div class="alert alert-danger" *ngIf="reqfname.errors.minlength">Minimum length is 3</div>
+              </div>
+            </div>
+            <div class="col-md-6 form-group">
+              <input placeholder="Last Name" name="description"  class="form-control ng-untouched ng-pristine ng-valid" [(ngModel)]="productService.newProduct.description" #reqlname="ngModel" required minlength="3">
+              <div *ngIf="reqlname.invalid && reqlname.touched">
+                <div class="alert alert-danger" *ngIf="reqlname.errors.required">Field required</div>
+                <div class="alert alert-danger" *ngIf="reqlname.errors.minlength">Minimum length is 3</div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 form-group">
+              <input placeholder="Phone Number" name="price" type="number" class="form-control ng-untouched ng-pristine ng-valid" [(ngModel)]="productService.newProduct.price" #reqphonenumber="ngModel" required pattern="[0-9]{8}">
+              <div *ngIf="reqphonenumber.invalid && reqphonenumber.touched">
+                <div class="alert alert-danger" *ngIf="reqphonenumber.errors.required">Field required</div>
+                <div class="alert alert-danger" *ngIf="reqphonenumber.errors.pattern">Should be a valid phone number</div>
+              </div>
+            </div>
+            <div class="col-md-6 form-group">
+              <input placeholder="Address" name="quantity" type="number" class="form-control ng-untouched ng-pristine ng-valid" [(ngModel)]="productService.newProduct.quantity" #reqadress="ngModel" required minlength="5">
+              <div *ngIf="reqadress.invalid && reqadress.touched">
+                <div class="alert alert-danger" *ngIf="reqadress.errors.required">Field required</div>
+                <div class="alert alert-danger" *ngIf="reqadress.errors.minlength">Minimum length is 5</div>
+              </div>
+            </div>
+            <div class="col-md-6 form-group">
+              <input placeholder="Last Name" name="category"  class="form-control ng-untouched ng-pristine ng-valid" [(ngModel)]="productService.newProduct.category" #reqlname="ngModel" required minlength="3">
+              <div *ngIf="reqlname.invalid && reqlname.touched">
+                <div class="alert alert-danger" *ngIf="reqlname.errors.required">Field required</div>
+                <div class="alert alert-danger" *ngIf="reqlname.errors.minlength">Minimum length is 3</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <input class="btn btn-success btn-lg btn-block" type="submit" value="Join" (click)="addProduct(productService.newProduct)">
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+

@@ -1,3 +1,4 @@
+import { AddProductComponent } from './Product/add-product/add-product.component';
 import { ShowProductsComponent } from './Product/show-products/show-products.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -9,7 +10,8 @@ const routes: Routes = [
 
   { path: 'showEvents', component: ShowEventsComponent },
   { path: 'showUsers', component: ShowUsersComponent },
-  { path: 'showProducts', component: ShowProductsComponent }
+  { path: 'showProducts', component: ShowProductsComponent },
+  { path: 'addProduct', component: AddProductComponent }
 
 ];
 

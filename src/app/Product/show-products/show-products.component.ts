@@ -1,7 +1,7 @@
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../product.service';
-import { Product } from '../product';
+import { Product } from 'src/app/Models/product.model';
 
 @Component({
   selector: 'app-show-products',
@@ -16,7 +16,7 @@ export class ShowProductsComponent implements OnInit {
     this.productService.getAllProducts().subscribe( data =>
       {
         this.productList = data['hydra:member'];
-        console.log(this.productList);
+        console.table(this.productList);
       });
   }
 

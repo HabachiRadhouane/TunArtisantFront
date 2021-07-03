@@ -3,11 +3,12 @@
     <div class="card h-100">
       <div class="card-body">
           <h4 class="card-title">
-              <a routerLink="">{{ product.title }}</a>
-            </h4>
-        <h5>{{ product.commands }}</h5>
+            {{ product.title }}
+          </h4>
       </div>
-
+      <!-- <div class="col-lg-4 col-md-6 mb-4" *ngFor="let command of product.commands">
+          {{ command }}
+      </div> -->
     </div>
   </div>
 </div>
