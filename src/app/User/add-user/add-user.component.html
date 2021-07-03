@@ -1,0 +1,47 @@
+
+<!-- Page Content -->
+<div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <form #form="ngForm" form class="form-horizontal">
+          <div class="table">
+            <div class="row">
+              <div class="col-md-6 form-group">
+                <input placeholder="First Name" name="username" class="form-control ng-untouched ng-pristine ng-valid"  [(ngModel)]="userService.newUser.username" #reqfname="ngModel" required minlength="3">
+                <div *ngIf="reqfname.invalid && reqfname.touched">
+                  <div class="alert alert-danger" *ngIf="reqfname.errors.required">Field required</div>
+                  <div class="alert alert-danger" *ngIf="reqfname.errors.minlength">Minimum length is 3</div>
+                </div>
+              </div>
+              <div class="col-md-6 form-group">
+                <input placeholder="email" name="email"  class="form-control ng-untouched ng-pristine ng-valid" [(ngModel)]="userService.newUser.email" #reqlname="ngModel" required minlength="3">
+                <div *ngIf="reqlname.invalid && reqlname.touched">
+                  <div class="alert alert-danger" *ngIf="reqlname.errors.required">Field required</div>
+                  <div class="alert alert-danger" *ngIf="reqlname.errors.minlength">Minimum length is 3</div>
+                </div>
+              </div>
+            </div>
+              <div class="col-md-6 form-group">
+                <input placeholder="Role" name="array[]"  class="form-control ng-untouched ng-pristine ng-valid" [(ngModel)]="userService.newUser.roles" #reqlname="ngModel" required minlength="3">
+                <div *ngIf="reqlname.invalid && reqlname.touched">
+                  <div class="alert alert-danger" *ngIf="reqlname.errors.required">Field required</div>
+                  <div class="alert alert-danger" *ngIf="reqlname.errors.minlength">Minimum length is 3</div>
+                </div>
+              </div>
+             
+            </div>
+  
+            <div class="row">
+              <div class="col-md-6">
+                <input class="btn btn-success btn-lg btn-block" type="submit" value="Join" (click)="addUser(userService.newUser)">
+              </div>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  
+  

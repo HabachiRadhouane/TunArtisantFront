@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from '../users.service';
-import { Users } from '../users';
+import { User } from 'src/app/Models/user.model';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class ShowUsersComponent implements OnInit {
 
-  userList: Users[]=[] ;
+  userList: User[]=[] ;
   constructor(private usersService: UsersService, private router:Router) { }
 
   ngOnInit(): void  {
@@ -19,8 +19,6 @@ export class ShowUsersComponent implements OnInit {
       console.log(this.userList);
   });
 
-
-  
-  }
-
 }
+}
+
