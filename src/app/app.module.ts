@@ -8,6 +8,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { ShowUsersComponent } from './User/show-users/show-users.component';
 import { ShowProductsComponent } from './Product/show-products/show-products.component';
 import { AddProductComponent } from './Product/add-product/add-product.component';
+import { AddEventComponent } from './Event/add-event/add-event.component';
+import { EditEventComponent } from './Event/edit-event/edit-event.component';
+import { ShowCommentComponent } from './comment/show-comment/show-comment.component';
+import { ShowInscriptioneventComponent } from './inscriptionevent/show-inscriptionevent/show-inscriptionevent.component';
+
 
 @NgModule({
   declarations: [
@@ -16,7 +21,11 @@ import { AddProductComponent } from './Product/add-product/add-product.component
     ShowUsersComponent,
     ShowProductsComponent,
     AddProductComponent,
-
+    AddEventComponent,
+    EditEventComponent,
+    ShowCommentComponent,
+    ShowInscriptioneventComponent,
+    
   ],
   imports: [
     BrowserModule,

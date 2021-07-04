@@ -1,14 +1,20 @@
-<div class="row">
-    <div class="col-lg-4 col-md-6 mb-4" *ngFor="let event of eventList">
-      <div class="card h-100">
-        <div class="card-body">
-            <h4 class="card-title">
-                <a routerLink="">{{ event.title }}</a>
-              </h4>
-          <h5>{{ event.type }}</h5>
-        </div>
-     
-      </div>
-    </div>
-  </div>
-
+<table id="event">
+  <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Type</th>
+      <th>Location</th>
+  </tr>
+  <tr *ngFor="let event of eventList">
+    <td>{{event.title}}</td>
+    <td>{{event.description}}</td>
+    <td>{{event.type}}</td>
+    <td>{{event.location}}</td>
+ 
+    <td>
+      <button class="button"  class="btn btn-primary btn-warning" (click)="deleteEvent(event.id)">delete</button>
+        <i class="fa fa-edit"></i>
+    
+    </td>
+  </tr>
+</table>
