@@ -1,0 +1,21 @@
+  <table id="Stores">
+    <tr>
+        <th>title</th>
+        <th>description</th>
+        <th>password</th>
+        <th>Adress</th>
+        <th>Email</th>
+    </tr>
+    <tr *ngFor="let store of storeList">
+      <td>{{store.titre}}</td>
+      <td>{{store.description}}</td>
+      <td>{{store.logo}}</td>
+      <td>{{store.adresse}}</td>
+      <td>{{store.professionalEmail}}</td>
+      <td>
+        <button  class="btn btn-primary btn-warning" (click)="deleteStore(store.id)">delete</button>
+          <i></i>
+      </td>
+    </tr>
+  
+  </table>
