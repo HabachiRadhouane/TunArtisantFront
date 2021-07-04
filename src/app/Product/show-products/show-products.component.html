@@ -1,15 +1,20 @@
-<div class="row">
-  <div class="col-lg-4 col-md-6 mb-4" *ngFor="let product of productList">
-    <div class="card h-100">
-      <div class="card-body">
-          <h4 class="card-title">
-            {{ product.title }}
-          </h4>
-      </div>
-      <!-- <div class="col-lg-4 col-md-6 mb-4" *ngFor="let command of product.commands">
-          {{ command }}
-      </div> -->
-    </div>
-  </div>
-</div>
-
+<table id="Products">
+  <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Category</th>
+      <th>Edit</th>
+      <th>Delete</th>
+  </tr>
+  <tr *ngFor="let product of productService.allProducts">
+    <td>{{product.title}}</td>
+    <td>{{product.description}}</td>
+    <td>{{product.price}}</td>
+    <td>{{product.quantity}}</td>
+    <td>{{product.category.title}}</td>
+    <td></td>
+    <td><a (click)="deleteProduct(product.id)">Delete</a></td>
+  </tr>
+</table>
