@@ -9,14 +9,23 @@ import { Product } from 'src/app/Models/product.model';
   styleUrls: ['./show-products.component.css']
 })
 export class ShowProductsComponent implements OnInit {
+  data;
   productList: Product[]=[] ;
-  constructor(private productService: ProductService, private router:Router) { }
+  constructor(public productService: ProductService, private router:Router) { }
 
   ngOnInit(): void {
-    this.productService.getAllProducts().subscribe( data =>
-      {
-        this.productList = data['hydra:member'];
-        console.table(this.productList);
+    this.getAllProducts();
+    // this.data = this.productService.getProductByID(13);
+    // console.log(this.data);
+  }
+
+  getAllProducts(){
+    this.productService.getAllProducts();
+  }
+  deleteProduct(id:number){
+    this.productService.deleteProduct(id).subscribe(
+      () => {
+        this.getAllProducts();
       });
   }
 

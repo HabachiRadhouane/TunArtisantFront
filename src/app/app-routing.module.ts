@@ -8,8 +8,8 @@ import { AddUserComponent } from './User/add-user/add-user.component';
 import { DeleteUserComponent } from './User/delete-user/delete-user.component';
 import { ShowStoresComponent } from './Store/show-stores/show-stores.component';
 import { AddStoresComponent } from './Store/add-stores/add-stores.component';
-const routes: Routes = [
 
+const routes: Routes = [
   { path: 'showEvents', component: ShowEventsComponent },
   { path: 'showUsers', component: ShowUsersComponent },
   { path: 'showProducts', component: ShowProductsComponent },
