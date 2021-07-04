@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Store } from './../Models/store.model';
+import { User } from '../Models/user.model';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +19,7 @@ export class StoreService {
     logo: '',
     adresse: '',
     professionalEmail: '',
-    userAccount: ''
+    userAccount: new User
   }
 
   getAllStores(): Observable<Store[]>{

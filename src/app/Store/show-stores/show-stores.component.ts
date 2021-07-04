@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class ShowStoresComponent implements OnInit {
   storeList: Store[]=[] ;
 
-  constructor(private storeService: StoreService, private router:Router) { }
+  constructor(public storeService: StoreService, private router:Router) { }
 
   ngOnInit(): void {
     this.getAllStores();
@@ -34,4 +34,8 @@ export class ShowStoresComponent implements OnInit {
       });
   }
 
+   
+  editStore(res: Store) {
+    this.storeService.newStore= Object.assign({}, res);
+  }
 }

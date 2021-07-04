@@ -16,6 +16,10 @@
         <button  class="btn btn-primary btn-warning" (click)="deleteStore(store.id)">delete</button>
           <i></i>
       </td>
+
+      <td>
+        <button class="btn btn-success btn-lg btn-block" routerLink="/EditStore" type="submit" value="Edit" (click)="editStore(store)">edit</button>
+      </td>
     </tr>
   
   </table>

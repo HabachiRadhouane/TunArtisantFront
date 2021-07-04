@@ -11,7 +11,14 @@ import { Router } from '@angular/router';
 export class AddUserComponent implements OnInit {
 
   constructor(public userService: UsersService, private router:Router) { }
+  selectedRole:Array<any> ;
 
+  //roles = ['ADMIN', 'ARTISAN','USER'];
+  roles:any[]= [
+    {code:'ADMIN',role:'ADMIN'},
+    {code:'ARTISAN',role:'ARTISAN'},
+    {code:'USER',role:'USER'},
+  ];
   ngOnInit(): void {
   }
 
@@ -19,7 +26,9 @@ export class AddUserComponent implements OnInit {
     console.log(user);
     this.userService.addUser(user).subscribe();
   }
-
+  choice(code){
+    this.selectedRole=code;
+  }
   
 
 }
