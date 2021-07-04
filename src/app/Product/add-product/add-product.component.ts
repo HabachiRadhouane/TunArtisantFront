@@ -1,3 +1,4 @@
+import { CategoryService } from './../../Category/category.service';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/Models/product.model';
@@ -9,10 +10,10 @@ import { ProductService } from '../product.service';
   styleUrls: ['./add-product.component.css']
 })
 export class AddProductComponent implements OnInit {
-  constructor(public productService: ProductService, private router:Router) { }
+  constructor(public productService: ProductService, public categoryService: CategoryService , private router:Router) { }
 
   ngOnInit(): void {
-    // this.productService.addProduct(this.newProduct).subscribe();
+    this.categoryService.getAllCategories();
   }
   addProduct(product: Product) {
     console.log(product);
