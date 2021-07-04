@@ -1,0 +1,12 @@
+<table id="event">
+    <tr>
+        <th>content</th>
+        <th>creation_date</th>
+       
+    </tr>
+    <tr *ngFor="let comment of commentList">
+      <td>{{comment.content}}</td>
+      <td>{{comment.creation_date}}</td>
+    </tr>
+  </table>
+  
