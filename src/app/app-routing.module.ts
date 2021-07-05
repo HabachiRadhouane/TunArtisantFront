@@ -10,12 +10,8 @@ import { AddUserComponent } from './User/add-user/add-user.component';
 import { DeleteUserComponent } from './User/delete-user/delete-user.component';
 import { ShowStoresComponent } from './Store/show-stores/show-stores.component';
 import { AddStoresComponent } from './Store/add-stores/add-stores.component';
-<<<<<<< HEAD
 import { EditUserComponent } from './User/edit-user/edit-user.component';
 import { EditStoreComponent } from './Store/edit-store/edit-store.component';
-const routes: Routes = [
-=======
->>>>>>> 67db6701bc435f20f7aec54d4f60acbf4a136c4d
 
 const routes: Routes = [
   { path: 'showEvents', component: ShowEventsComponent },
