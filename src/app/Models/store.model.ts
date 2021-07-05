@@ -1,3 +1,5 @@
+import { User } from "./user.model";
+
 export class Store {
     id: number;
     titre: string;
@@ -5,5 +7,5 @@ export class Store {
     logo: string;
     adresse: string;
     professionalEmail: string;
-    userAccount:string
+    userAccount:User
 }

@@ -20,6 +20,8 @@ import { EditProductComponent } from './Product/edit-product/edit-product.compon
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProductDetailsComponent } from './Product/product-details/product-details.component';
+import { EditUserComponent } from './User/edit-user/edit-user.component';
+import { EditStoreComponent } from './Store/edit-store/edit-store.component';
 
 
 
@@ -43,6 +45,8 @@ import { ProductDetailsComponent } from './Product/product-details/product-detai
     HeaderComponent,
     FooterComponent,
     ProductDetailsComponent
+    EditUserComponent,
+    EditStoreComponent
 
   ],
   imports: [
