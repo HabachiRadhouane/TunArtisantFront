@@ -46,11 +46,11 @@
               </div>
 
               <div class="col-md-6 form-group">
-                <input placeholder="userAccount" name="userAccount"  class="form-control ng-untouched ng-pristine ng-valid" [(ngModel)]="storeService.newStore.userAccount" #reqlname="ngModel" required minlength="3">
-                <div *ngIf="reqlname.invalid && reqlname.touched">
-                  <div class="alert alert-danger" *ngIf="reqlname.errors.required">Field required</div>
-                  <div class="alert alert-danger" *ngIf="reqlname.errors.minlength">Minimum length is 3</div>
-                </div>
+                <select class="form-select form-select-lg mb-3 form-control ng-untouched ng-pristine ng-valid" name="sportType" aria-label=".form-select-lg example" [(ngModel)]="storeService.newStore.userAccount" #reqsport="ngModel" required minlength="3">
+                  <option *ngFor="let user of UsersService.allUsers" value="/api/users/{{user.id}}">
+                    {{user.username}}
+                  </option>
+                </select>
               </div>
              
             </div>

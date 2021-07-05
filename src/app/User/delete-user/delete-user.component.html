@@ -13,8 +13,9 @@
       <td>{{user.password}}</td>
       <td>{{user.roles}}</td>
       <td>
-        <button class="button"  class="btn btn-primary btn-warning" (click)="updateUser(user.id,user)">Edit</button>
-          <i class="fa fa-edit"></i>
+        <button class="btn" routerLink="/EditUser" (click)="editUser(user)">
+          Edit
+        </button>
       </td>
       <td>
         <button  class="btn btn-primary btn-warning" (click)="deleteUser(user.id)">delete</button>
@@ -22,3 +23,5 @@
       </td>
     </tr>
   </table>
+
+  <div></div>

@@ -37,10 +37,14 @@ export class DeleteUserComponent implements OnInit {
 
   updateUser(id:number,user: User) {
     console.log(user);
-    this.UserService.updateUser(user).subscribe();
+    this.UserService.updateUser(user).subscribe(
+    );
   }
 
   editUser(res: User) {
     this.UserService.newUser= Object.assign({}, res);
   }
+
+  
+
 }
