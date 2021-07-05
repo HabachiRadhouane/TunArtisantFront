@@ -11,17 +11,10 @@ import { AddUserComponent } from './User/add-user/add-user.component';
 import { DeleteUserComponent } from './User/delete-user/delete-user.component';
 import { ShowStoresComponent } from './Store/show-stores/show-stores.component';
 import { AddStoresComponent } from './Store/add-stores/add-stores.component';
-<<<<<<< HEAD
+
 import { ProductDetailsComponent } from './Product/product-details/product-details.component';
-=======
-<<<<<<< HEAD
 import { EditUserComponent } from './User/edit-user/edit-user.component';
 import { EditStoreComponent } from './Store/edit-store/edit-store.component';
-const routes: Routes = [
-=======
->>>>>>> 67db6701bc435f20f7aec54d4f60acbf4a136c4d
->>>>>>> f3c2f8714083490b8193b9165668f6ae17eb181f
-
 const routes: Routes = [
   { path: 'showEvents', component: ShowEventsComponent },
   { path: 'showComments', component: ShowCommentComponent},
@@ -34,12 +27,9 @@ const routes: Routes = [
   { path: 'deleteUser', component: DeleteUserComponent },
   { path: 'showStores', component: ShowStoresComponent },
   { path: 'AddStore', component: AddStoresComponent },
-<<<<<<< HEAD
-  { path: 'productDetails', component: ProductDetailsComponent }
-=======
+  { path: 'productDetails', component: ProductDetailsComponent },
   { path: 'EditUser', component: EditUserComponent },
   { path: 'EditStore', component: EditStoreComponent }
->>>>>>> f3c2f8714083490b8193b9165668f6ae17eb181f
 
 ];
 

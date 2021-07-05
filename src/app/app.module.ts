@@ -44,7 +44,7 @@ import { EditStoreComponent } from './Store/edit-store/edit-store.component';
     EditProductComponent,
     HeaderComponent,
     FooterComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
     EditUserComponent,
     EditStoreComponent
 
