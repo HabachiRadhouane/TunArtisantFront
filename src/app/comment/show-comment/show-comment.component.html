@@ -1,12 +1,20 @@
-<table id="event">
+<table id="comment">
     <tr>
         <th>content</th>
-        <th>creation_date</th>
        
     </tr>
     <tr *ngFor="let comment of commentList">
       <td>{{comment.content}}</td>
-      <td>{{comment.creation_date}}</td>
-    </tr>
+
+    <td>
+      <button class="button"  class="btn btn-primary btn-warning" (click)="deleteComment(comment.id)">delete</button>
+        <i class="fa fa-edit"></i>  
+    </td>
+     <td>
+      <button class="btn" routerLink="/editComment" (click)="updateComment(comment)">
+        Edit
+      </button>
+    </td>
+  </tr>
   </table>
   

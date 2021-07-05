@@ -1,1 +1,10 @@
-<p>show-inscriptionevent works!</p>
+<table id="inscriptionevent">
+  <tr>
+      <th>State</th>
+ 
+  </tr>
+  <tr *ngFor="let inscriptionevent of inscriptioneventList">
+    <td>{{ inscriptionevent.state }}</td>  
+
+  </tr>
+</table>

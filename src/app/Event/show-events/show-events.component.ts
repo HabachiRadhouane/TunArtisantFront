@@ -31,5 +31,8 @@ export class ShowEventsComponent implements OnInit {
         this.getAllEvents();
       });
   }
+  updateEvent(event: Event) {
+    this.eventsService.newEvent= Object.assign({}, event);
+  }
 
 }

@@ -1,1 +1,54 @@
-<p>edit-event works!</p>
+<!-- Page Content -->
+<div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <form #form="ngForm" form class="form-horizontal">
+          <div class="table">
+            <div class="row">
+              <div class="col-md-6 form-group">
+                <input placeholder="First Name" name="title" class="form-control ng-untouched ng-pristine ng-valid"  [(ngModel)]="eventsService.newEvent.title" #reqfname="ngModel" required minlength="3">
+                <div *ngIf="reqfname.invalid && reqfname.touched">
+                  <div class="alert alert-danger" *ngIf="reqfname.errors.required">Field required</div>
+                </div>
+              </div>
+              <div class="col-md-6 form-group">
+                <input placeholder="description" name="description"  class="form-control ng-untouched ng-pristine ng-valid" [(ngModel)]="eventsService.newEvent.description" #reqlname="ngModel" required minlength="3">
+                <div *ngIf="reqlname.invalid && reqlname.touched">
+                  <div class="alert alert-danger" *ngIf="reqlname.errors.required">Field required</div>
+                </div>
+              </div>
+              <div class="col-md-6 form-group">
+                <input placeholder="startDate" name="startDate" class="form-control ng-untouched ng-pristine ng-valid"  [(ngModel)]="eventsService.newEvent.startDate" #reqfname="ngModel" required minlength="3">
+                <div *ngIf="reqfname.invalid && reqfname.touched">
+                  <div class="alert alert-danger" *ngIf="reqfname.errors.required">Field required</div>
+                </div>
+              </div>
+              <div class="col-md-6 form-group">
+                <input placeholder="endDate" name="startDate" class="form-control ng-untouched ng-pristine ng-valid"  [(ngModel)]="eventsService.newEvent.endDate" #reqfname="ngModel" required minlength="3">
+                <div *ngIf="reqfname.invalid && reqfname.touched">
+                  <div class="alert alert-danger" *ngIf="reqfname.errors.required">Field required</div>
+                </div>
+              </div>
+              <div class="col-md-6 form-group">
+                <input placeholder="location" name="location" class="form-control ng-untouched ng-pristine ng-valid"  [(ngModel)]="eventsService.newEvent.location" #reqfname="ngModel" required minlength="3">
+                <div *ngIf="reqfname.invalid && reqfname.touched">
+                  <div class="alert alert-danger" *ngIf="reqfname.errors.required">Field required</div>
+                </div>
+              </div>
+              <div class="col-md-6 form-group">
+                <input placeholder="type" name="type" class="form-control ng-untouched ng-pristine ng-valid"  [(ngModel)]="eventsService.newEvent.type" #reqfname="ngModel" required minlength="3">
+                <div *ngIf="reqfname.invalid && reqfname.touched">
+                  <div class="alert alert-danger" *ngIf="reqfname.errors.required">Field required</div>
+                </div>
+              </div>
+            </div>  
+            <div class="row">
+              <div class="col-md-6">
+                <input class="btn btn-success btn-lg btn-block" type="submit" value="Join" (click)="updateEvent(eventsService.newEvent.id,eventsService.newEvent)">
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
