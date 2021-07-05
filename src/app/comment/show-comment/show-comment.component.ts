@@ -25,5 +25,16 @@ export class ShowCommentComponent implements OnInit {
       console.log(this.commentList);
   });
     }
+    
+  deleteComment(id: number) {
+      this.commentService.deleteComment(id).subscribe(
+        (data) => {
+          this.getAllComments();
+        });
+    }
+
+    updateComment(comment: Comment) {
+      this.commentService.newComment= Object.assign({}, comment);
+    }
 
 }

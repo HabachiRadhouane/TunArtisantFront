@@ -10,11 +10,11 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ProductService {
-  public allProducts : Product[];
   constructor(private httpClient: HttpClient) { }
   baseURL:string =  'http://127.0.0.1:8000/';
 
-  newProduct: Product = {
+
+  currentProduct: Product = {
     id: null,
     title: '',
     description: '',
@@ -29,11 +29,7 @@ export class ProductService {
   // }
 
   getAllProducts() {
-    return this.httpClient.get<Product[]>(this.baseURL+"api/products").subscribe(
-      (data: Product[]) => {
-        this.allProducts = data['hydra:member'];
-        console.table(this.allProducts);
-      });
+    return this.httpClient.get<Product[]>(this.baseURL+"api/products");
   }
 
   deleteProduct(id:Number){
@@ -45,7 +41,7 @@ export class ProductService {
   addProduct(product: Product): Observable<Product> {
     return this.httpClient.post<Product>(this.baseURL+"api/products", product);
   }
-  getProductByID(id){
-    return this.allProducts.find(x => x.id === id);
-  }
+  // getProductByID(id){
+  //   return this.allProducts.find(x => x.id === id);
+  // }
 }

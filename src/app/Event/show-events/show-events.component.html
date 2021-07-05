@@ -13,8 +13,15 @@
  
     <td>
       <button class="button"  class="btn btn-primary btn-warning" (click)="deleteEvent(event.id)">delete</button>
-        <i class="fa fa-edit"></i>
-    
+        <i class="fa fa-edit"></i>        
     </td>
+
+    <td>
+      <button class="btn" routerLink="/editEvent" (click)="updateEvent(event)">
+        Edit
+      </button>
+    </td>
+
+
   </tr>
 </table>

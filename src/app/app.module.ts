@@ -16,10 +16,6 @@ import { AddUserComponent } from './User/add-user/add-user.component';
 import { DeleteUserComponent } from './User/delete-user/delete-user.component';
 import { ShowStoresComponent } from './Store/show-stores/show-stores.component';
 import { AddStoresComponent } from './Store/add-stores/add-stores.component';
-import { EditUserComponent } from './User/edit-user/edit-user.component';
-import { EditStoreComponent } from './Store/edit-store/edit-store.component';
-
-
 
 @NgModule({
   declarations: [
@@ -32,13 +28,10 @@ import { EditStoreComponent } from './Store/edit-store/edit-store.component';
     EditEventComponent,
     ShowCommentComponent,
     ShowInscriptioneventComponent,
-
     AddUserComponent,
     DeleteUserComponent,
     ShowStoresComponent,
     AddStoresComponent,
-    EditUserComponent,
-    EditStoreComponent
 
   ],
   imports: [

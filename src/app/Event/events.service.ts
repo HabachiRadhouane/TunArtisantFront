@@ -12,6 +12,7 @@ export class EventsService {
   eventtUrl:string =  'http://127.0.0.1:8000/api/events';
 
   newEvent: Event = {
+    
     id: null,
     title: '',
     description: '',
@@ -33,6 +34,6 @@ export class EventsService {
     return this.httpClient.delete(this.eventtUrl+'/'+id)
   }
   updateEvent(event: Event): Observable<Event> {
-    return this.httpClient.put<Event>(this.eventtUrl+event.id, event);
+    return this.httpClient.put<Event>(this.eventtUrl+'/'+event.id, event);
   }
 }

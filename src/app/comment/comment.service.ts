@@ -11,6 +11,7 @@ export class CommentService {
   commentUrl:string =  'http://127.0.0.1:8000/api/comments';
 
   newComment: Comment = {
+
     id: null,
     content: '',
     creation_date: '',
@@ -22,13 +23,13 @@ export class CommentService {
     return this.httpClient.get<Comment[]>(this.commentUrl); 
   }
   addComment(comment: Comment): Observable<Comment> {
-    return this.httpClient.post<Comment>(this.commentUrl, Comment);
+    return this.httpClient.post<Comment>(this.commentUrl, comment);
   }
-  deleteComment(id:Number){
+  deleteComment(id: Number){
     return this.httpClient.delete(this.commentUrl+'/'+id)
   }
-  updateComment(Comment: Comment): Observable<Comment> {
-    return this.httpClient.put<Comment>(this.commentUrl+Comment.id, Comment);
+  updateComment(comment: Comment): Observable<Comment> {
+    return this.httpClient.put<Comment>(this.commentUrl+'/'+comment.id, Comment);
   }
 
 }
