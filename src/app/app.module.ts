@@ -16,6 +16,10 @@ import { AddUserComponent } from './User/add-user/add-user.component';
 import { DeleteUserComponent } from './User/delete-user/delete-user.component';
 import { ShowStoresComponent } from './Store/show-stores/show-stores.component';
 import { AddStoresComponent } from './Store/add-stores/add-stores.component';
+import { EditProductComponent } from './Product/edit-product/edit-product.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { ProductDetailsComponent } from './Product/product-details/product-details.component';
 
 
 
@@ -34,7 +38,11 @@ import { AddStoresComponent } from './Store/add-stores/add-stores.component';
     AddUserComponent,
     DeleteUserComponent,
     ShowStoresComponent,
-    AddStoresComponent
+    AddStoresComponent,
+    EditProductComponent,
+    HeaderComponent,
+    FooterComponent,
+    ProductDetailsComponent
 
   ],
   imports: [
