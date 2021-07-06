@@ -22,7 +22,7 @@
               </div>
             </div>
             <div class="col-md-6 form-group">
-              <input placeholder="password" name="password"  class="form-control ng-untouched ng-pristine ng-valid" [(ngModel)]="userService.newUser.password" #reqlname="ngModel" required minlength="3">
+              <input placeholder="password" name="password" type="password" class="form-control ng-untouched ng-pristine ng-valid" [(ngModel)]="userService.newUser.password" #reqlname="ngModel" required minlength="3">
               <div *ngIf="reqlname.invalid && reqlname.touched">
                 <div class="alert alert-danger" *ngIf="reqlname.errors.required">Field required</div>
                 <div class="alert alert-danger" *ngIf="reqlname.errors.minlength">Minimum length is 3</div>
@@ -30,8 +30,8 @@
             </div>
           </div>
               <div class="col-md-6 form-group">
-                select Roles : <select (change)="choice(userService.newUser.roles)" >
-                  <option *ngFor="let r of roles" [value]="userService.newUser.roles">{{r.role}}</option>
+                select Roles : <select [(ngModel)]="userService.newUser.roles" name="role" >
+                  <option *ngFor="let r of roles" [value]="r.role">{{r.role}}</option>
               </select>
               </div>
             <div class="row">
@@ -43,8 +43,7 @@
       </div>
     </div>
   </div>
-  
-  
-  
-  
-  
+
+
+
+

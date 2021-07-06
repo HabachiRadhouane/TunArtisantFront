@@ -38,11 +38,9 @@ const routes: Routes = [
   { path: 'deleteUser', component: DeleteUserComponent },
   { path: 'showStores', component: ShowStoresComponent },
   { path: 'AddStore', component: AddStoresComponent },
-  { path: 'productDetails', component: ProductDetailsComponent },
+  { path: 'productDetails/:id', component: ProductDetailsComponent },
   { path: 'EditUser', component: EditUserComponent },
   { path: 'EditStore', component: EditStoreComponent },
-  { path: 'FooterComponent', component: FooterComponent },
-  { path: 'HeaderComponent', component: HeaderComponent },
   { path: 'LoginComponent', component: LoginComponent }
 
 ];

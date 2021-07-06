@@ -25,24 +25,24 @@ export class UsersService {
     id: null,
     email: '',
     username: '',
-    roles : [''],
+    roles : '',
     password:''
   }
-   
- 
+
+
 
   getAllUsers1() {
-  return  this.httpClient.get<User[]>(this.usertUrl+"api/users").subscribe( data => 
+  return  this.httpClient.get<User[]>(this.usertUrl+"api/users").subscribe( data =>
     { this.allUsers = data['hydra:member'];
     console.log(this.allUsers);
     });
      }
 
- 
 
-  
+
+
   getAllUsers(): Observable<User[]>{
-    return this.httpClient.get<User[]>(this.usertUrl+"api/users"); 
+    return this.httpClient.get<User[]>(this.usertUrl+"api/users");
   }
 
   deleteUser(id:Number){

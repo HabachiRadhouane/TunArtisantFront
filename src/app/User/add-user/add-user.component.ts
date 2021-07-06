@@ -27,8 +27,9 @@ export class AddUserComponent implements OnInit {
     this.userService.addUser(user).subscribe();
   }
   choice(code){
+    console.log(code);
     this.selectedRole=code;
   }
-  
+
 
 }
