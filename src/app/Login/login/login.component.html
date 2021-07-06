@@ -1,0 +1,12 @@
+<div class="col-md-6 form-group">
+    <input placeholder="First Name" name="username" class="form-control ng-untouched nLoginServiceg-pristine ng-valid"  [(ngModel)]="LoginService.newLogin.email" #reqfname="ngModel" required minlength="3">
+    
+  </div>
+
+  <div class="col-md-6 form-group">
+    <input placeholder="email" name="email"  class="form-control ng-untouched ng-pristine ng-valid" [(ngModel)]="LoginService.newLogin.password" #reqlname="ngModel" required minlength="3">
+  </div>
+
+  <div class="col-md-6">
+    <input class="btn btn-success btn-lg btn-block" type="submit" value="Join" (click)="getlogin(LoginService.newLogin.email,LoginService.newLogin.password)">
+  </div>

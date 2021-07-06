@@ -57,7 +57,7 @@ export class UsersService {
   choice(code){
     this.selectedRole=code;
   }
-  // getUserByID(id){
-  //   return this.getAllUsers.find(x => x.id === id);
-  // }
+  getUserByID(id){
+    return this.httpClient.get<User>(this.usertUrl+"api/users"+id);
+   }
 }
