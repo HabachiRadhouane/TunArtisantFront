@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from './../product.service';
 import { Component, OnInit } from '@angular/core';
@@ -10,19 +11,20 @@ import { Product } from 'src/app/Models/product.model';
 })
 export class ProductDetailsComponent implements OnInit {
   productList: Product[]=[] ;
+  product : Product = new Product();
   id;
-  constructor(public productService: ProductService, private router:Router,private activatedRoute:ActivatedRoute) { }
+  constructor(public productService: ProductService, private router:Router,private activatedRoute:ActivatedRoute, private httpClient: HttpClient) { }
 
   ngOnInit(): void {
-    this.id = this.activatedRoute.snapshot.params.id;
+    this.id = this.activatedRoute.snapshot.params.id
     console.log(this.id)
-    this.getAllProducts();
+    this.getProductById(this.id)
   }
-  getAllProducts(){
-    this.productService.getAllProducts().subscribe(
-      (data: Product[]) => {
-        this.productList = data['hydra:member'];
-        console.table(this.productList);
-      });
+  getProductById(id){
+    return this.httpClient.get<Product>(this.productService.baseURL+"api/products/"+id).subscribe(
+      (data)=> {
+        this.product = data ;
+      }
+    );
   }
 }
