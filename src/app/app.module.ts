@@ -25,6 +25,8 @@ import { ProductDetailsComponent } from './Product/product-details/product-detai
 import { EditUserComponent } from './User/edit-user/edit-user.component';
 import { EditStoreComponent } from './Store/edit-store/edit-store.component';
 import { EventDetailsComponent } from './event-details/event-details.component';
+import { LoginComponent } from './Login/login/login.component';
+
 
 @NgModule({
   declarations: [
@@ -43,13 +45,21 @@ import { EventDetailsComponent } from './event-details/event-details.component';
     AddStoresComponent,
     AddCommentComponent,
     EditCommentComponent,
+    EditCommentComponent,
+    AddCommentComponent,
     EditProductComponent,
     HeaderComponent,
     FooterComponent,
     ProductDetailsComponent,
     EditStoreComponent,
     EditUserComponent,
-    EventDetailsComponent
+    EventDetailsComponent,
+    EditUserComponent,
+    EditStoreComponent,
+    LoginComponent
+
+
+
 
   ],
   imports: [
