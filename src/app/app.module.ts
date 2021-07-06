@@ -24,6 +24,7 @@ import { FooterComponent } from './footer/footer.component';
 import { ProductDetailsComponent } from './Product/product-details/product-details.component';
 import { EditUserComponent } from './User/edit-user/edit-user.component';
 import { EditStoreComponent } from './Store/edit-store/edit-store.component';
+import { EventDetailsComponent } from './event-details/event-details.component';
 import { LoginComponent } from './Login/login/login.component';
 
 
@@ -42,12 +43,17 @@ import { LoginComponent } from './Login/login/login.component';
     DeleteUserComponent,
     ShowStoresComponent,
     AddStoresComponent,
+    AddCommentComponent,
+    EditCommentComponent,
     EditCommentComponent,
     AddCommentComponent,
     EditProductComponent,
     HeaderComponent,
     FooterComponent,
     ProductDetailsComponent,
+    EditStoreComponent,
+    EditUserComponent,
+    EventDetailsComponent,
     EditUserComponent,
     EditStoreComponent,
     LoginComponent
