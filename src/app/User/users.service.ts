@@ -32,6 +32,7 @@ export class UsersService {
 
 
 
+
   getAllUsers1() {
   return  this.httpClient.get<User[]>(this.usertUrl+"api/users").subscribe( data =>
     { this.allUsers = data['hydra:member'];

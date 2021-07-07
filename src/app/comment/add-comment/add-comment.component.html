@@ -1,47 +1,20 @@
 <!-- Page Content -->
-<div class="container">
-    <div class="row">
-      <div class="col-lg-12 text-center">
-        <form #form="ngForm" form class="form-horizontal">
-          <div class="table">
-            <div class="row">
-              <div class="col-md-6 form-group">
-                <input placeholder="content" name="content" class="form-control ng-untouched ng-pristine ng-valid"  [(ngModel)]="commentService.newComment.content" >
-                <div *ngIf="reqfname.invalid && reqfname.touched">
-                  <div class="alert alert-danger" *ngIf="reqfname.errors.required">Field required</div>
+<div class="contact-form spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="contact__form__title">
+                    <h2>Leave Message</h2>
                 </div>
-              </div>
-              <div class="col-md-6 form-group">
-                <input placeholder="creation_date" name="creation_date"  class="form-control ng-untouched ng-pristine ng-valid" [(ngModel)]="commentService.newComment.creation_date" #reqlname="ngModel" >
-                <div *ngIf="reqlname.invalid && reqlname.touched">
-                  <div class="alert alert-danger" *ngIf="reqlname.errors.required">Field required</div>
-                </div>
-              </div>
-              <div class="col-md-6 form-group">
-                <input placeholder="user_id" name="id_user" class="form-control ng-untouched ng-pristine ng-valid"  [(ngModel)]="commentService.newComment.user_id" #reqfname="ngModel" >
-                <div *ngIf="reqfname.invalid && reqfname.touched">
-                  <div class="alert alert-danger" *ngIf="reqfname.errors.required">Field required</div>
-                </div>
-              </div>
-              <div class="col-md-6 form-group">
-                <input placeholder="id_event" name="id_event" class="form-control ng-untouched ng-pristine ng-valid"  [(ngModel)]="commentService.newComment.event_id" #reqfname="ngModel" >
-                <div *ngIf="reqfname.invalid && reqfname.touched">
-                  <div class="alert alert-danger" *ngIf="reqfname.errors.required">Field required</div>
-                </div>
-              </div>
-            </div>  
-            <div class="row">
-              <div class="col-md-6">
-                <input class="btn btn-success btn-lg btn-block" type="submit" value="addComment" (click)="addComment(commentService.newComment)">
-              </div>
             </div>
-          </div>
+        </div>
+        <form action="#">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <textarea placeholder="Your message" [(ngModel)]="commentService.newComment.content"  name="comment_content"></textarea>
+                    <input class="btn btn-success btn-lg btn-block" type="submit" value="addComment" (click)="addComment(commentService.newComment)">
+                </div>
+            </div>
         </form>
-      </div>
     </div>
-  </div>
-  
-  
-  
-  
-  
+</div>
