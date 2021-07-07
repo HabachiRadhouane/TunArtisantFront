@@ -17,19 +17,28 @@
                     <h3>{{product.title}}</h3>
                     <div class="product__details__price">${{product.price}}</div>
                     <p>{{product.description}}</p>
-                    <div class="product__details__quantity">
+                    <div class="product__details__quantity" *ngIf="currentUser.status!='ADMIN'">
                         <div class="quantity">
                             <div class="pro-qty">
                                 <input type="text" value="1">
                             </div>
                         </div>
                     </div>
-                    <a href="#" class="primary-btn">ADD TO CARD</a>
-                    <a href="#" class="heart-icon"><span class="icon_heart_alt"></span></a>
+                    <input type="button" href="#" class="primary-btn" *ngIf="currentUser.status!='ADMIN'" value="ADD TO CART" [disabled]="product.quantity==0">
+                    <a href="#" class="primary-btn" *ngIf="currentUser.status=='ADMIN'" routerLink="/editProduct/{{product.id}}">EDIT PRODUCT</a>
                     <ul>
-                        <li><b>Availability</b> <span>In Stock</span></li>
+                        <li>
+                          <b>Availability</b>
+                          <ng-container *ngIf="product.quantity!=0; then inStock; else outOfStock">
+                          </ng-container>
+                          <ng-template #inStock>
+                              <span>In Stock</span>
+                          </ng-template>
+                          <ng-template #outOfStock>
+                              <span>Out Of Stock</span>
+                          </ng-template>
+                        </li>
                         <li><b>Shipping</b> <span>01 day shipping. <samp>Free pickup today</samp></span></li>
-                        <li><b>Weight</b> <span>0.5 kg</span></li>
                         <li><b>Share on</b>
                             <div class="share">
                                 <a href="#"><i class="fa fa-facebook"></i></a>
