@@ -35,7 +35,7 @@ const routes: Routes = [
   { path: 'addProduct', component: AddProductComponent },
   { path: 'editProduct', component: EditProductComponent },
   { path: 'addUser', component: AddUserComponent },
-  { path: 'deleteUser', component: DeleteUserComponent },
+  { path: 'DashboardUser', component: DeleteUserComponent },
   { path: 'showStores', component: ShowStoresComponent },
   { path: 'AddStore', component: AddStoresComponent },
   { path: 'productDetails/:id', component: ProductDetailsComponent },
