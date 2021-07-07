@@ -1,3 +1,4 @@
+import { User } from 'src/app/Models/user.model';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from './../product.service';
@@ -13,9 +14,12 @@ export class ProductDetailsComponent implements OnInit {
   productList: Product[]=[] ;
   product : Product = new Product();
   id;
+  currentUser : User;
   constructor(public productService: ProductService, private router:Router,private activatedRoute:ActivatedRoute, private httpClient: HttpClient) { }
 
   ngOnInit(): void {
+    this.currentUser = JSON.parse(sessionStorage.getItem("userDetails")) as User;
+    console.log(this.currentUser);
     this.id = this.activatedRoute.snapshot.params.id
     console.log(this.id)
     this.getProductById(this.id)

@@ -23,6 +23,7 @@ export class ShowProductsComponent implements OnInit, OnChanges {
     this.currentUser.email="priest123@hotmail.fr"
     this.currentUser.username="habachiradhouane@gmail.com"
     this.currentUser.password="aaaa"
+    this.currentUser.status = "User"
 
     sessionStorage.setItem('userDetails', JSON.stringify(this.currentUser));
     // this.user = JSON.parse(sessionStorage.getItem("userDetails")) as User;

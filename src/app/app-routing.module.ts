@@ -33,7 +33,7 @@ const routes: Routes = [
   { path: 'showUsers', component: ShowUsersComponent },
   { path: 'showProducts', component: ShowProductsComponent },
   { path: 'addProduct', component: AddProductComponent },
-  { path: 'editProduct', component: EditProductComponent },
+  { path: 'editProduct/:id', component: EditProductComponent },
   { path: 'addUser', component: AddUserComponent },
   { path: 'DashboardUser', component: DeleteUserComponent },
   { path: 'showStores', component: ShowStoresComponent },

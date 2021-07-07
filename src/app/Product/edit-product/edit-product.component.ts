@@ -1,5 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Category } from './../../Models/category.model';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CategoryService } from './../../Category/category.service';
 import { ProductService } from './../product.service';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
@@ -12,11 +13,16 @@ import { Product } from 'src/app/Models/product.model';
 })
 export class EditProductComponent implements OnInit {
 
-  constructor(public productService: ProductService, public categoryService: CategoryService , private router:Router) { }
+  constructor(public productService: ProductService, public categoryService: CategoryService , private router:Router,private activatedRoute:ActivatedRoute, private httpClient: HttpClient) { }
   editClickedFromEdit : any ;
   allCategories : Category[];
+  product : Product = new Product();
+  id;
   ngOnInit(): void {
     this.getAllCategories();
+    this.id = this.activatedRoute.snapshot.params.id
+    console.log(this.id)
+    this.getProductById(this.id)
   }
 
   editProduct(product:Product){
@@ -30,6 +36,14 @@ export class EditProductComponent implements OnInit {
         this.allCategories = data['hydra:member'];
         console.table(this.allCategories);
       });
+  }
+  getProductById(id){
+    return this.httpClient.get<Product>(this.productService.baseURL+"api/products/"+id).subscribe(
+      (data)=> {
+        // console.log(data);
+        this.product = data ;
+      }
+    );
   }
 
 }
