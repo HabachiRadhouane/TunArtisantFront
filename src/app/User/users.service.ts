@@ -26,8 +26,10 @@ export class UsersService {
     email: '',
     username: '',
     roles : '',
-    password:''
+    password:'',
+    status:'unconfirmed'
   }
+
 
 
 
