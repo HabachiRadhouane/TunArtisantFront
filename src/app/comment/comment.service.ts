@@ -14,9 +14,9 @@ export class CommentService {
 
     id: null,
     content: '',
-    creation_date: '',
-    user_id: '',
-    event_id: ''
+    creationDate: '',
+    user: '',
+    event: ''
   }
 
   getAllComments(): Observable<Comment[]>{

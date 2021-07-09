@@ -17,15 +17,16 @@ import { ShowStoresComponent } from './Store/show-stores/show-stores.component';
 import { AddStoresComponent } from './Store/add-stores/add-stores.component';
 import { EditUserComponent } from './User/edit-user/edit-user.component';
 import { EditStoreComponent } from './Store/edit-store/edit-store.component';
+import { EventDetailsComponent } from './Event/event-details/event-details.component';
 import { ProductDetailsComponent } from './Product/product-details/product-details.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './Login/login/login.component';
-
 const routes: Routes = [
   { path: 'showEvents', component: ShowEventsComponent },
   { path: 'editEvent', component: EditEventComponent },
   { path: 'showinscriptionevent', component: ShowInscriptioneventComponent },
+  { path: 'eventDetails/:id', component: EventDetailsComponent },
   { path: 'editComment', component: EditCommentComponent },
   { path: 'showComments', component: ShowCommentComponent},
   { path: 'addEvents', component: AddEventComponent },

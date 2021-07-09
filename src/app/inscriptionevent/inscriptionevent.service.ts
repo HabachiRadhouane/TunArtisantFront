@@ -14,11 +14,11 @@ export class InscriptioneventService {
   newinscriptionevent: Inscriptionevent = {
     
     id: null,
-    user_id: '',
-    event_id: '',
+    user: '',
+    event: '',
     state: '',
-    created_at: '',
-    updated_at: ''
+    createdAt: '',
+    updatedAt: ''
 
   }
 
