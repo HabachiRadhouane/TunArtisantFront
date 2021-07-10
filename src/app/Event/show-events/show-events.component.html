@@ -115,7 +115,7 @@
                         </div>
                         <div class="col-lg-4 col-md-4">
                             <div class="filter__found">
-                                <h6><span>{{eventList.length}}</span> Products found</h6>
+                                <h6><span>{{eventList.length}}</span> Events found</h6>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-3">
@@ -165,7 +165,7 @@
                               {{event.location}}
                             </td>
                             <td>
-                              <button class="button" class="btn btn-primary btn-warning" >Comments</button>
+                              <button class="button" class="btn btn-primary btn-warning" routerLink="/showComments/{{event.id}}" >Comments</button>
                             </td>
                             <td>
                                 <button class="button" class="btn btn-primary btn-warning" >Participations</button>

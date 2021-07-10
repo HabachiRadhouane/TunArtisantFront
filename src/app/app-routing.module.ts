@@ -42,7 +42,9 @@ const routes: Routes = [
   { path: 'productDetails/:id', component: ProductDetailsComponent },
   { path: 'EditUser', component: EditUserComponent },
   { path: 'EditStore', component: EditStoreComponent },
-  { path: 'LoginComponent', component: LoginComponent }
+  { path: 'LoginComponent', component: LoginComponent },
+  { path: 'showComments/:id', component: ShowCommentComponent}
+
 
 ];
 

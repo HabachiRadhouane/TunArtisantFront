@@ -3,19 +3,19 @@
   <!-- Product Details Section Begin -->
   <section class="product-details spad">
     <div class="container">
-        <div class="row">
+        <div class="row">   
             <div class="col-lg-6 col-md-6">
                 <div class="product__details__pic">
                     <div class="product__details__pic__item">
                         <img class="product__details__pic__item--large"
-                            src="assets/img/product/details/product-details-1.jpg" alt="">
+                            src="assets/img/klim.jpg" alt="">
                     </div>
                 </div>
             </div>
             <div class="col-lg-6 col-md-6">
                 <div class="product__details__text">
                     <h3>{{event.title}}</h3>
-                    <div class="product__details__price">${{event.description}}</div>
+                    <div class="product__details__price">{{event.description}}</div>
                     <p>{{event.location}}</p>
                     <a class="primary-btn" (click)="addInscriptionevent()">Participate</a>
 
@@ -23,7 +23,7 @@
             </div>
         </div>
     </div>
+    <app-show-comment></app-show-comment>
 </section>
 <!-- Product Details Section End -->
-
 <app-footer></app-footer>

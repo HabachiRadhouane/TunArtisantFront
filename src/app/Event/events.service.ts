@@ -36,4 +36,7 @@ export class EventsService {
   updateEvent(event: Event): Observable<Event> {
     return this.httpClient.put<Event>(this.eventtUrl+'/'+event.id, event);
   }
+  getEventById(id){
+    return this.httpClient.get<Event>(this.eventtUrl+"/"+id);
+  }
 }

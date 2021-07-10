@@ -18,7 +18,7 @@ export class ShowEventsComponent implements OnInit {
   user : User
   ngOnInit(): void  {
     this.getAllEvents();
-    this.currentUser.status = "User"
+    this.currentUser.status = "ADMIN"
     this.currentUser.id = 2
     sessionStorage.setItem('userDetails', JSON.stringify(this.currentUser));
   };

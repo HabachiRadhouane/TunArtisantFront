@@ -32,4 +32,8 @@ export class CommentService {
     return this.httpClient.put<Comment>(this.commentUrl+'/'+comment.id, Comment);
   }
 
+  getCommentById(id){
+    return this.httpClient.get<Comment>(this.commentUrl+"/"+id);
+  }
+
 }

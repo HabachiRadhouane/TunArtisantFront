@@ -19,7 +19,13 @@ export class EventDetailsComponent implements OnInit {
   id;
   currentUser : User;
   newInscriptionEvent : Inscriptionevent = new Inscriptionevent();
-  constructor(public eventsService: EventsService, public inscriptioneventservice: InscriptioneventService, private router:Router,private activatedRoute:ActivatedRoute, private httpClient: HttpClient) { }
+  constructor(
+    public eventsService: EventsService, 
+    public inscriptioneventservice: InscriptioneventService,
+     private router:Router,
+     private activatedRoute:ActivatedRoute, 
+     private httpClient: HttpClient
+     ) { }
 
   ngOnInit(): void {
     this.currentUser = JSON.parse(sessionStorage.getItem("userDetails")) as User;
