@@ -1,6 +1,6 @@
 <app-header></app-header>
 <!-- Product Section Begin -->
-<section class="product spad">
+<section class="product spad" *ngIf="currentUser.status=='ADMIN'">
     <div class="container">
         <div class="row">
             <div class="col-lg-3 col-md-5">
@@ -115,7 +115,7 @@
                         </div>
                         <div class="col-lg-4 col-md-4">
                             <div class="filter__found">
-                                <h6><span>{{eventList.length}}</span> Products found</h6>
+                                <h6><span>{{eventList.length}}</span> Events found</h6>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-3">
@@ -165,7 +165,7 @@
                               {{event.location}}
                             </td>
                             <td>
-                              <button class="button" class="btn btn-primary btn-warning" >Comments</button>
+                              <button class="button" class="btn btn-primary btn-warning" routerLink="/showComments/{{event.id}}" >Comments</button>
                             </td>
                             <td>
                                 <button class="button" class="btn btn-primary btn-warning" >Participations</button>
@@ -189,9 +189,9 @@
         </div>
     </div>
 </section>
-------------------------------------------------------------------------------------------------------
+
 <!-- Product Section Begin -->
-    <section class="product spad">
+    <section class="product spad" *ngIf="currentUser.status=='User'">
       <div class="container">
           <div class="row">
               <div class="col-lg-3 col-md-5">
@@ -323,7 +323,7 @@
                               <div class="product__item__pic set-bg" style="background-image: url('assets/img/eventBig.PNG');">
                                   <ul class="product__item__pic__hover">
                                       <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                      <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                                      <li><a routerLink="/eventDetails/{{event.id}}"><i class="fa fa-retweet"></i></a></li>
                                       <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
                                   </ul>
                               </div>

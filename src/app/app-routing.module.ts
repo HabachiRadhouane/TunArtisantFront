@@ -17,17 +17,22 @@ import { ShowStoresComponent } from './Store/show-stores/show-stores.component';
 import { AddStoresComponent } from './Store/add-stores/add-stores.component';
 import { EditUserComponent } from './User/edit-user/edit-user.component';
 import { EditStoreComponent } from './Store/edit-store/edit-store.component';
+import { EventDetailsComponent } from './Event/event-details/event-details.component';
 import { ProductDetailsComponent } from './Product/product-details/product-details.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './Login/login/login.component';
+<<<<<<< HEAD
 import { HeaderstoreComponent } from './Store/headerstore/headerstore.component';
 import { StoreDetailsComponent} from './Store/store-details/store-details.component';
 
+=======
+>>>>>>> f0f7520c52c8f869118b71b37dd5a704edf1c278
 const routes: Routes = [
   { path: 'showEvents', component: ShowEventsComponent },
   { path: 'editEvent', component: EditEventComponent },
   { path: 'showinscriptionevent', component: ShowInscriptioneventComponent },
+  { path: 'eventDetails/:id', component: EventDetailsComponent },
   { path: 'editComment', component: EditCommentComponent },
   { path: 'showComments', component: ShowCommentComponent},
   { path: 'addEvents', component: AddEventComponent },
@@ -44,8 +49,13 @@ const routes: Routes = [
   { path: 'EditUser', component: EditUserComponent },
   { path: 'EditStore', component: EditStoreComponent },
   { path: 'LoginComponent', component: LoginComponent },
+<<<<<<< HEAD
   { path: 'headerstore', component: HeaderstoreComponent },
   { path: 'StoreDetails/:id', component: StoreDetailsComponent }
+=======
+  { path: 'showComments/:id', component: ShowCommentComponent}
+
+>>>>>>> f0f7520c52c8f869118b71b37dd5a704edf1c278
 
 ];
 
