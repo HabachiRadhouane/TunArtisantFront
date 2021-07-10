@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from '../users.service';
+import { Observable } from 'rxjs';
 import { User } from 'src/app/Models/user.model';
+import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,8 +12,10 @@ import { Router } from '@angular/router';
 })
 export class DeleteUserComponent implements OnInit {
   userList: User[]=[] ;
+  newUser : User = new User();
 
-  constructor(public UserService: UsersService ) { }
+  constructor(public UserService: UsersService ,private httpClient: HttpClient) { }
+  usertUrl:string =  'http://127.0.0.1:8000/';
 
   ngOnInit(): void {
     this.getAllUsers();
@@ -45,6 +49,13 @@ export class DeleteUserComponent implements OnInit {
     this.UserService.newUser= Object.assign({}, res);
   }
 
-  
+  acceptUser(id:number,user:User){
+    this.newUser.status = "Confirmed" ;
+    console.log(this.newUser);
+    this.UserService.updateUser(this.newUser).subscribe();
+
+}
+
+
 
 }

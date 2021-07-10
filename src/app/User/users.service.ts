@@ -62,4 +62,6 @@ export class UsersService {
   getUserByID(id){
     return this.httpClient.get<User>(this.usertUrl+"api/users"+id);
    }
+
+   
 }

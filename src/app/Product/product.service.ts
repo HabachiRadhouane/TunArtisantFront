@@ -21,7 +21,8 @@ export class ProductService {
     price: 0,
     quantity: 0,
     category: new Category,
-    commands : []
+    commands : [],
+    store: ''
   }
 
   // getAllProducts(): Observable<Product[]>{

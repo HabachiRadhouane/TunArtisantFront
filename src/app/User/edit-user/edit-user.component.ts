@@ -31,4 +31,5 @@ export class EditUserComponent implements OnInit {
   choice(code){
     this.selectedRole=code;
   }
+
 }

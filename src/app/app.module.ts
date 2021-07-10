@@ -26,6 +26,8 @@ import { EditUserComponent } from './User/edit-user/edit-user.component';
 import { EditStoreComponent } from './Store/edit-store/edit-store.component';
 import { EventDetailsComponent } from './event-details/event-details.component';
 import { LoginComponent } from './Login/login/login.component';
+import { HeaderstoreComponent } from './Store/headerstore/headerstore.component';
+import { StoreDetailsComponent } from './Store/store-details/store-details.component';
 
 
 @NgModule({
@@ -56,7 +58,9 @@ import { LoginComponent } from './Login/login/login.component';
     EventDetailsComponent,
     EditUserComponent,
     EditStoreComponent,
-    LoginComponent
+    LoginComponent,
+    HeaderstoreComponent,
+    StoreDetailsComponent
 
 
 

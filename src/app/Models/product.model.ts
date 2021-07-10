@@ -8,4 +8,5 @@ export class Product {
     quantity: number;
     category: Category;
     commands:[] ;
+    store:string;
 }

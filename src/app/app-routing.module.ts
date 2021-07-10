@@ -21,6 +21,8 @@ import { ProductDetailsComponent } from './Product/product-details/product-detai
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './Login/login/login.component';
+import { HeaderstoreComponent } from './Store/headerstore/headerstore.component';
+import { StoreDetailsComponent} from './Store/store-details/store-details.component';
 
 const routes: Routes = [
   { path: 'showEvents', component: ShowEventsComponent },
@@ -41,7 +43,9 @@ const routes: Routes = [
   { path: 'productDetails/:id', component: ProductDetailsComponent },
   { path: 'EditUser', component: EditUserComponent },
   { path: 'EditStore', component: EditStoreComponent },
-  { path: 'LoginComponent', component: LoginComponent }
+  { path: 'LoginComponent', component: LoginComponent },
+  { path: 'headerstore', component: HeaderstoreComponent },
+  { path: 'StoreDetails/:id', component: StoreDetailsComponent }
 
 ];
 

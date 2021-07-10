@@ -1,7 +1,3 @@
-<!-- Page Preloder -->
-<div id="preloder">
-    <div class="loader"></div>
-</div>
 
 <!-- Humberger Begin -->
 <div class="humberger__menu__overlay"></div>
@@ -154,7 +150,7 @@
                         <span>Dashboard Admin</span>
                     </div>
                     <ul>
-                        <li><a href="#">Page Users</a></li>
+                        <li><a routerLink="/DashboardUser">Page Users</a></li>
                         <li><a href="#">Page Products</a></li>
                         <li><a href="#">Page Event</a></li>
                         <li><a href="#">Page Stores</a></li>
@@ -195,44 +191,56 @@
                                             <table style="width:100%"  border-spacing='15px'>
                                                 <thead>
                                                     <tr>
-                                                        <th>Users</th>
+                                                        <th></th>
                                                         <th>Username</th>
                                                         <th>email</th>
                                                         <th>Role</th>
                                                         <th>Status</th>
-                                                        <th>Accept</th>
-                                                        <th>Edit</th>
-                                                        <th>delete</th>
+                                                        <th></th>
+                                                        <th></th>
+                                                        <th></th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                                     <tr *ngFor="let user of userList">
-                                                        <td class="shoping__cart__quantity" padding='6px'>
-                                                            <img src="assets/img/cart/cart-1.jpg" alt="">
+                                                        <td class="shoping__cart__quantity" padding='6px'> 
+                                                            <img src="assets/img/user.png" alt="">
                                                         </td>
-                                                        <td class="shoping__cart__quantity" padding='6px'>
+                                                        <td class="shoping__cart__quantity" padding='6px'>  
                                                           {{user.username}}
                                                         </td>
                                                         <td class="shoping__cart__quantity" padding='6px'>
+                                                           
                                                           {{user.email}}
+                                                     
                                                         </td>
                                                         <td class="shoping__cart__quantity" padding='6px'>
+                                                            <div class="col-md-3">
                                                           {{user.roles}}
+                                                        </div>
                                                         </td>
                                                         <td class="shoping__cart__quantity" padding='6px'>
-                                                          {{user.status}}
-                                                        </td>
-                                                        <td class="shoping__cart__total" padding='6px'>
-                                                            <i class="fa fa-check btn btn-primary btn-warning">Accept</i>
-                                                        </td>
-                                                        <td class="shoping__cart__total" padding='6px'>
                                                             
-                                                          <i class="fa fa-edit btn btn-primary btn-warning " routerLink="/EditUser" (click)="editUser(user)">
-                                                            Edit
-                                                          </i>
+                                                          {{user.status}}
+                                                      
                                                         </td>
                                                         <td class="shoping__cart__total" padding='6px'>
-                                                          <i   class="fa fa-trash  btn btn-primary btn-warning" (click)="deleteUser(user.id)">delete</i>
+                                                            <div class="col-md-3">
+                                                            <i class="fa fa-check btn btn-primary btn-warning " routerLink="/DashboardUser" (click)="acceptUser(user.id,user)"></i>
+                                                            
+                                                            </div>
+                                                        </td>
+                                                        <td class="shoping__cart__total" padding='6px'>
+                                                            <div class="col-md-3">
+                                                          <i class="fa fa-edit btn btn-primary btn-warning  " routerLink="/EditUser" (click)="editUser(user)">
+                                                             </i> 
+                                                        </div>
+                                                         
+                                                        </td>
+                                                        <td class="shoping__cart__total " padding='6px'>
+                                                            <div class="col-md-3">
+                                                          <i   class="fa fa-trash  btn btn-primary btn-warning " (click)="deleteUser(user.id)"></i>
+                                                       </div>
                                                         </td>
                                                     </tr>
                                                 </tbody>
