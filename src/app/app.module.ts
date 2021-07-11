@@ -27,6 +27,7 @@ import { EditStoreComponent } from './Store/edit-store/edit-store.component';
 import { LoginComponent } from './Login/login/login.component';
 import { EventDetailsComponent } from './Event/event-details/event-details.component';
 import { DeleteInscriptioneventComponent } from './inscriptionevent/delete-inscriptionevent/delete-inscriptionevent.component';
+import { EditInscriptioneventComponent } from './inscriptionevent/edit-inscriptionevent/edit-inscriptionevent.component';
 
 
 @NgModule({
@@ -58,7 +59,8 @@ import { DeleteInscriptioneventComponent } from './inscriptionevent/delete-inscr
     EditStoreComponent,
     LoginComponent,
     EventDetailsComponent,
-    DeleteInscriptioneventComponent
+    DeleteInscriptioneventComponent,
+    EditInscriptioneventComponent
 
 
 

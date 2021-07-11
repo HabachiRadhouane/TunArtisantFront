@@ -1,10 +1,53 @@
-<table id="inscriptionevent">
-  <tr>
-      <th>State</th>
- 
-  </tr>
-  <tr *ngFor="let inscriptionevent of inscriptioneventList">
-    <td>{{ inscriptionevent.state }}</td>  
-
-  </tr>
-</table>
+<app-header></app-header>
+ <section class="shoping-cart spad" *ngIf="currentUser.status=='ADMIN'">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-5">
+                <div class="sidebar">
+                    <div class="sidebar__item">
+                        <h4>Department</h4>
+                        <ul>
+                            <li><a href="#">Acceuil</a></li>
+                            <li><a href="#">Products</a></li>
+                            <li><a routerLink="/showEvents" >events</a></li>
+                            <li><a href="#">stores</a></li>
+                            <li><a href="#">disconnect</a></li>
+                          
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-9 col-md-7">
+                <div class="shoping__cart__table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID_Event</th>
+                                <th>Username</th>
+                                <th>State</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let inscriptionevent of inscriptioneventList">
+                                <td class="shoping__cart__item" >
+                                    <img src="assets/img/user.png" alt="">
+                                    
+                                    <h5>{{inscriptionevent.id}}</h5>
+                                </td>
+                                <td class="shoping__cart__item" >
+                                  <h5>{{inscriptionevent.user}}</h5>
+                              </td>
+                              <td class="shoping__cart__item" >
+                                <h5>{{inscriptionevent.state}}</h5>
+                            </td>
+                              <td>
+                                  <button class="button"  class="btn btn-primary btn-warning" (click)="deleteInsciptionevent(inscriptionevent)" >refuse</button></td>
+                                  <td><button class="button"  class="btn btn-primary btn-warning"(click)="updateInscriptionevent(inscriptionevent)">accepte</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
