@@ -12,7 +12,7 @@ import { EventsService } from 'src/app/Event/events.service';
   styleUrls: ['./show-inscriptionevent.component.css']
 })
 export class ShowInscriptioneventComponent implements OnInit {
-
+  clicked = false;
   currentEvent : Event = new Event();
   newinscriptionevent : Inscriptionevent =  new Inscriptionevent();
   currentUser = new User();
@@ -54,9 +54,12 @@ export class ShowInscriptioneventComponent implements OnInit {
     });
   }
 
-  updateInscriptionevent(inscriptionevent: Inscriptionevent) {
-    this.inscriptioneventService.newinscriptionevent= Object.assign({}, inscriptionevent);
-  }
+  acceptInscriptionevent(id:number,inscriptionevent:Inscriptionevent){
+    console.log(id);
+    inscriptionevent.state = "accepted" ;
+    console.log(inscriptionevent);
+    this.inscriptioneventService.updateInscriptionevent(inscriptionevent).subscribe();
+}
 
   /*getAllInscriptionevents() {
     this.inscriptioneventService.getAllInscriptionevents().subscribe( data => 
