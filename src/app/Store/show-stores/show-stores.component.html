@@ -8,7 +8,14 @@
   <script src="js/owl.carousel.min.js"></script>
   <script src="js/main.js"></script>
   <app-headerstore></app-headerstore>
-
+<div class=row>
+    <div class="col-sm-7"></div>
+    
+    <div  *ngIf="currentUser.status!='User'" >
+        <a routerLink="/AddStore" class="blog__btn">Add Store <span class="arrow_right"></span></a>
+    
+    </div>
+</div>
   <section class=" breadcrumb-section blog spad">
     <div class="container">
         <div class="row">
@@ -86,6 +93,9 @@
                                 <ul>
                                     <li><i class="fa-solid fa-location"></i> {{store.adresse}}</li>
                                     <li><i class="fa-solid fa-phone"></i>{{store.logo}}</li>
+                                      <li *ngIf="currentUser.status!='User'"><a routerLink="/EditStore/{{store.id}}"><i class="fa fa-pencil"></i></a></li>
+                                      <li *ngIf="currentUser.status!='User'"><a (click)="deleteStore(store.id)"><i class="fa fa-trash"></i></a></li>
+                                     
                                 </ul>
                                 <h5><a href="#"> {{store.titre}} </a></h5>
                                 <p></p>

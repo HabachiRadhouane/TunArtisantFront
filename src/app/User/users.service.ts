@@ -63,5 +63,9 @@ export class UsersService {
     return this.httpClient.get<User>(this.usertUrl+"api/users"+id);
    }
 
+   getUserByUsername(username){
+    return this.httpClient.get<User>(this.usertUrl+"api/users"+username);
+   }
+
    
 }

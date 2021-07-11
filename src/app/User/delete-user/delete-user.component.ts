@@ -50,12 +50,10 @@ export class DeleteUserComponent implements OnInit {
   }
 
   acceptUser(id:number,user:User){
-    this.newUser.status = "Confirmed" ;
-    console.log(this.newUser);
-    this.UserService.updateUser(this.newUser).subscribe();
-
+    console.log(id);
+    user.status = "Confirmed" ;
+    console.log(user);
+    this.UserService.updateUser(user).subscribe();
 }
-
-
 
 }

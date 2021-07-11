@@ -22,12 +22,10 @@ import { ProductDetailsComponent } from './Product/product-details/product-detai
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './Login/login/login.component';
-<<<<<<< HEAD
 import { HeaderstoreComponent } from './Store/headerstore/headerstore.component';
 import { StoreDetailsComponent} from './Store/store-details/store-details.component';
 
-=======
->>>>>>> f0f7520c52c8f869118b71b37dd5a704edf1c278
+
 const routes: Routes = [
   { path: 'showEvents', component: ShowEventsComponent },
   { path: 'editEvent', component: EditEventComponent },
@@ -47,15 +45,13 @@ const routes: Routes = [
   { path: 'AddStore', component: AddStoresComponent },
   { path: 'productDetails/:id', component: ProductDetailsComponent },
   { path: 'EditUser', component: EditUserComponent },
-  { path: 'EditStore', component: EditStoreComponent },
-  { path: 'LoginComponent', component: LoginComponent },
-<<<<<<< HEAD
+  { path: 'EditStore/:id', component: EditStoreComponent },
+  { path: 'Login', component: LoginComponent },
   { path: 'headerstore', component: HeaderstoreComponent },
-  { path: 'StoreDetails/:id', component: StoreDetailsComponent }
-=======
+  { path: 'StoreDetails/:id', component: StoreDetailsComponent },
   { path: 'showComments/:id', component: ShowCommentComponent}
 
->>>>>>> f0f7520c52c8f869118b71b37dd5a704edf1c278
+
 
 ];
 
