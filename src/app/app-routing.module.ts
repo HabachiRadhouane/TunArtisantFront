@@ -23,6 +23,10 @@ import { EditInscriptioneventComponent } from './inscriptionevent/edit-inscripti
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './Login/login/login.component';
+import { HeaderstoreComponent } from './Store/headerstore/headerstore.component';
+import { StoreDetailsComponent} from './Store/store-details/store-details.component';
+
+
 const routes: Routes = [
   
   { path: 'editInscriptionevent', component: EditInscriptioneventComponent},
@@ -46,7 +50,12 @@ const routes: Routes = [
   { path: 'EditStore', component: EditStoreComponent },
   { path: 'LoginComponent', component: LoginComponent },
   { path: 'showComments/:id', component: ShowCommentComponent},
-  { path: 'showinscriptionevent/:id', component: ShowInscriptioneventComponent }
+  { path: 'showinscriptionevent/:id', component: ShowInscriptioneventComponent },
+  { path: 'EditStore/:id', component: EditStoreComponent },
+  { path: 'Login', component: LoginComponent },
+  { path: 'headerstore', component: HeaderstoreComponent },
+  { path: 'StoreDetails/:id', component: StoreDetailsComponent },
+  { path: 'showComments/:id', component: ShowCommentComponent}
 
 
 

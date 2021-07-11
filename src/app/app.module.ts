@@ -25,9 +25,12 @@ import { ProductDetailsComponent } from './Product/product-details/product-detai
 import { EditUserComponent } from './User/edit-user/edit-user.component';
 import { EditStoreComponent } from './Store/edit-store/edit-store.component';
 import { LoginComponent } from './Login/login/login.component';
+import { HeaderstoreComponent } from './Store/headerstore/headerstore.component';
+import { StoreDetailsComponent } from './Store/store-details/store-details.component';
 import { EventDetailsComponent } from './Event/event-details/event-details.component';
 import { DeleteInscriptioneventComponent } from './inscriptionevent/delete-inscriptionevent/delete-inscriptionevent.component';
 import { EditInscriptioneventComponent } from './inscriptionevent/edit-inscriptionevent/edit-inscriptionevent.component';
+
 
 
 @NgModule({
@@ -58,9 +61,12 @@ import { EditInscriptioneventComponent } from './inscriptionevent/edit-inscripti
     EditUserComponent,
     EditStoreComponent,
     LoginComponent,
+    HeaderstoreComponent,
+    StoreDetailsComponent,
     EventDetailsComponent,
     DeleteInscriptioneventComponent,
     EditInscriptioneventComponent
+
 
 
 
