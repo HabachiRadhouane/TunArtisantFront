@@ -12,7 +12,7 @@
                 </div>
               </div>
               <div class="col-md-6 form-group">
-                <input placeholder="creation_date" name="creation_date" class="form-control ng-untouched ng-pristine ng-valid"  [(ngModel)]="commentService.newComment.creation_date" #reqfname="ngModel" >
+                <input placeholder="creation_date" name="creation_date" class="form-control ng-untouched ng-pristine ng-valid"  [(ngModel)]="commentService.newComment.creationDate" #reqfname="ngModel" >
                 <div *ngIf="reqfname.invalid && reqfname.touched">
                   <div class="alert alert-danger" *ngIf="reqfname.errors.required">Field required</div>
                 </div>

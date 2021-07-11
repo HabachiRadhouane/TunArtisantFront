@@ -17,15 +17,22 @@ import { ShowStoresComponent } from './Store/show-stores/show-stores.component';
 import { AddStoresComponent } from './Store/add-stores/add-stores.component';
 import { EditUserComponent } from './User/edit-user/edit-user.component';
 import { EditStoreComponent } from './Store/edit-store/edit-store.component';
+import { EventDetailsComponent } from './Event/event-details/event-details.component';
 import { ProductDetailsComponent } from './Product/product-details/product-details.component';
+import { EditInscriptioneventComponent } from './inscriptionevent/edit-inscriptionevent/edit-inscriptionevent.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './Login/login/login.component';
+import { HeaderstoreComponent } from './Store/headerstore/headerstore.component';
+import { StoreDetailsComponent} from './Store/store-details/store-details.component';
+
 
 const routes: Routes = [
+  
+  { path: 'editInscriptionevent', component: EditInscriptioneventComponent},
   { path: 'showEvents', component: ShowEventsComponent },
   { path: 'editEvent', component: EditEventComponent },
-  { path: 'showinscriptionevent', component: ShowInscriptioneventComponent },
+  { path: 'eventDetails/:id', component: EventDetailsComponent },
   { path: 'editComment', component: EditCommentComponent },
   { path: 'showComments', component: ShowCommentComponent},
   { path: 'addEvents', component: AddEventComponent },
@@ -41,7 +48,16 @@ const routes: Routes = [
   { path: 'productDetails/:id', component: ProductDetailsComponent },
   { path: 'EditUser', component: EditUserComponent },
   { path: 'EditStore', component: EditStoreComponent },
-  { path: 'LoginComponent', component: LoginComponent }
+  { path: 'LoginComponent', component: LoginComponent },
+  { path: 'showComments/:id', component: ShowCommentComponent},
+  { path: 'showinscriptionevent/:id', component: ShowInscriptioneventComponent },
+  { path: 'EditStore/:id', component: EditStoreComponent },
+  { path: 'Login', component: LoginComponent },
+  { path: 'headerstore', component: HeaderstoreComponent },
+  { path: 'StoreDetails/:id', component: StoreDetailsComponent },
+  { path: 'showComments/:id', component: ShowCommentComponent}
+
+
 
 ];
 

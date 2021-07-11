@@ -37,6 +37,10 @@ body {
 	-webkit-font-smoothing: antialiased;
 	font-smoothing: antialiased;
 }
+header{
+
+	
+}
 
 h1,
 h2,
@@ -3465,4 +3469,4 @@ ol {
 	.blog__details__hero__text h2 {
 		font-size: 24px;
 	}
-}
+} 

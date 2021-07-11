@@ -14,11 +14,11 @@ export class InscriptioneventService {
   newinscriptionevent: Inscriptionevent = {
     
     id: null,
-    user_id: '',
-    event_id: '',
+    user: '',
+    event: '',
     state: '',
-    created_at: '',
-    updated_at: ''
+    createdAt: '',
+    updatedAt: ''
 
   }
 
@@ -33,5 +33,8 @@ export class InscriptioneventService {
   }
   updateInscriptionevent(inscriptionevent: Inscriptionevent): Observable<Inscriptionevent> {
     return this.httpClient.put<Inscriptionevent>(this.inscriptioneventUrl+'/'+inscriptionevent.id, inscriptionevent);
+  }
+  getByInscriptioneventId(id){
+    return this.httpClient.get<Inscriptionevent>(this.inscriptioneventUrl+"/"+id);
   }
 }

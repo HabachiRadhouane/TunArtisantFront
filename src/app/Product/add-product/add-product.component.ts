@@ -21,7 +21,8 @@ export class AddProductComponent implements OnInit {
     price: 0,
     quantity: 0,
     category: new Category,
-    commands : []
+    commands : [],
+    store:''
   }
   ngOnInit(): void {
     this.getAllCategories();

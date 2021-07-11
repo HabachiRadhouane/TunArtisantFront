@@ -1,63 +1,110 @@
-<section class="shoping-cart spad">
-  <div class="container">
-      <div class="row">
-          <div class="col-lg-12">
-              <div class="shoping__cart__table">
-                  <table>
-                      <thead>
-                          <tr>
-                              <th class="shoping__product">Title</th>
-                              <th>description</th>
-                              <th>type</th>
-                              <th>location</th>
-                              <th>delete</th>
-                              <th>Edit</th>
-                              <th>Show comments</th>
-                          </tr>
-                      </thead>
-                      <tbody>
-                          <tr *ngFor="let event of eventList">
-                              <td class="shoping__cart__item" >
-                                  <img src="assets/img/cart/cart-1.jpg" alt="">
-                                  <h5>{{event.title}}</h5>
-                              </td>
-                              <td class="shoping__cart__price">
-                                {{event.description}}
-                              </td>
-                              <td class="shoping__cart__quantity">
-                                  <div class="quantity">
-                                      <div class="pro-qty">
-                                        {{event.type}}
-                                      </div>
-                                  </div>
-                              </td>
-                              <td class="shoping__cart__total">
-                                {{event.location}}
-                              </td>
-                              <td class="shoping__cart__item__close">
-                                  <span class="icon_close" (click)="deleteEvent(event.id)"></span>
-                              </td>
-                              <td>
-                                  <i class="fa fa-edit" routerLink="/editEvent" (click)="updateEvent(event)"></i>        
-                              </td>
-                              <td>
-                                <button class="button" class="btn btn-primary btn-warning" >Show comments</button>
-                              </td>
-              
-                          </tr>
-                      </tbody>
-                  </table>
-              </div>
-          </div>
-      </div>
-  </div>
-</section>
-<!-- Shoping Cart Section End -->
-------------------------------------------------------------------------------------------------------
 <app-header></app-header>
+<!-- Product Section Begin -->
+<section class="product spad" *ngIf="currentUser.status=='ADMIN'">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-5">
+                <div class="sidebar">
+                    <div class="sidebar__item">
+                        <h4>Department</h4>
+                        <ul>
+                            <li><a href="#">Acceuil</a></li>
+                            <li><a href="#">Products</a></li>
+                            <li><a routerLink="/showEvents" >events</a></li>
+                            <li><a href="#">stores</a></li>
+                            <li><a href="#">disconnect</a></li>
+                          
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-9 col-md-7">
+                <div class="filter__item">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-5">
+                            <div>
+                                <button routerLink="/addEvents" class="button" class="btn btn-primary btn-warning">Add Event</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4">
+                            <div class="filter__found">
+                                <h6><span>{{eventList.length}}</span> Events found</h6>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-3">
+                            <div class="filter__option">
+                                <span class="icon_grid-2x2"></span>
+                                <span class="icon_ul"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                <div class="row">
+               
+        <div class="col-lg-12">
+            <div class="shoping__cart__table">
+                <table>
+                    <thead>
+                        <tr>
+                            
+                            <th class="shoping__product">ID</th>
+                            <th>Title</th>
+                            <th>type</th>
+                            <th>location</th>
+                            <th>Show comments</th>
+                            <th>Show Participations</th>
+                            <th></th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let event of eventList">
+                            <td class="shoping__cart__item" >
+                                <img src="assets/img/event.PNG" alt="">
+                                <h5>{{event.id}}</h5>
+                            </td>
+                            <td class="shoping__cart__price">
+                              {{event.title}}
+                            </td>
+                            <td class="shoping__cart__quantity">
+                                <div class="quantity">
+                                    <div class="pro-qty">
+                                      {{event.type}}
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="shoping__cart__total">
+                              {{event.location}}
+                            </td>
+                            <td>
+                              <button class="button" class="btn btn-primary btn-warning" routerLink="/showComments/{{event.id}}" >Comments</button>
+                            </td>
+                            <td>
+                                <button class="button" class="btn btn-primary btn-warning" routerLink="/showinscriptionevent/{{event.id}}">Participations</button>
+                              </td>
+                            <td class="shoping__cart__item__close">
+                                <span class="icon_close" (click)="deleteEvent(event.id)"></span>
+                            </td>
+                            <td>
+                                <i class="fa fa-edit" routerLink="/editEvent" (click)="updateEvent(event)"></i>        
+                            </td>
+                           
+            
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 <!-- Product Section Begin -->
-    <section class="product spad">
+    <section class="product spad" *ngIf="currentUser.status=='User'">
       <div class="container">
           <div class="row">
               <div class="col-lg-3 col-md-5">
@@ -186,10 +233,10 @@
                   <div class="row">
                       <div class="col-lg-4 col-md-6 col-sm-6" *ngFor="let event of eventList">
                           <div class="product__item">
-                              <div class="product__item__pic set-bg" style="background-image: url('assets/img/product/product-1.jpg');">
+                              <div class="product__item__pic set-bg" style="background-image: url('assets/img/eventBig.PNG');">
                                   <ul class="product__item__pic__hover">
                                       <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                      <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                                      <li><a routerLink="/eventDetails/{{event.id}}"><i class="fa fa-retweet"></i></a></li>
                                       <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
                                   </ul>
                               </div>

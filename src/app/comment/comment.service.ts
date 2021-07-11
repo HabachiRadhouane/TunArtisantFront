@@ -14,9 +14,9 @@ export class CommentService {
 
     id: null,
     content: '',
-    creation_date: '',
-    user_id: '',
-    event_id: ''
+    creationDate: '',
+    user: '',
+    event: ''
   }
 
   getAllComments(): Observable<Comment[]>{
@@ -30,6 +30,10 @@ export class CommentService {
   }
   updateComment(comment: Comment): Observable<Comment> {
     return this.httpClient.put<Comment>(this.commentUrl+'/'+comment.id, Comment);
+  }
+
+  getCommentById(id){
+    return this.httpClient.get<Comment>(this.commentUrl+"/"+id);
   }
 
 }
