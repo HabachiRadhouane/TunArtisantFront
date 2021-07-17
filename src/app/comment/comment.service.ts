@@ -14,7 +14,7 @@ export class CommentService {
 
     id: null,
     content: '',
-    creationDate: '',
+    creationDate : null,
     user: '',
     event: ''
   }

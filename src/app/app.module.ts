@@ -30,6 +30,7 @@ import { StoreDetailsComponent } from './Store/store-details/store-details.compo
 import { EventDetailsComponent } from './Event/event-details/event-details.component';
 import { DeleteInscriptioneventComponent } from './inscriptionevent/delete-inscriptionevent/delete-inscriptionevent.component';
 import { EditInscriptioneventComponent } from './inscriptionevent/edit-inscriptionevent/edit-inscriptionevent.component';
+import { DatePipe } from '@angular/common';
 
 
 
@@ -78,7 +79,7 @@ import { EditInscriptioneventComponent } from './inscriptionevent/edit-inscripti
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
