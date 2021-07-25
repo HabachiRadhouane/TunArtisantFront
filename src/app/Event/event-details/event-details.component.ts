@@ -13,6 +13,9 @@ import { InscriptioneventService } from 'src/app/inscriptionevent/inscriptioneve
   styleUrls: ['./event-details.component.css']
 })
 export class EventDetailsComponent implements OnInit {
+  addingInput = false;
+  clicked = "unconfirmed";
+  clicked2 = "accepted";
 
   eventList: Event[]=[] ;
   event : Event = new Event();
@@ -25,6 +28,7 @@ export class EventDetailsComponent implements OnInit {
      private router:Router,
      private activatedRoute:ActivatedRoute, 
      private httpClient: HttpClient
+     
      ) { }
 
   ngOnInit(): void {
@@ -38,7 +42,7 @@ export class EventDetailsComponent implements OnInit {
   getEventById(id){
     return this.httpClient.get<Event>(this.eventsService.eventtUrl+"/"+id).subscribe(
       (data)=> {
-        console.log("aaaaaaaaaaa3");
+
         this.event = data ;
       }
     );
@@ -53,6 +57,10 @@ export class EventDetailsComponent implements OnInit {
       console.log(this.newInscriptionEvent);
       this.inscriptioneventservice.addInscriptionevent(this.newInscriptionEvent).subscribe();
 
+  }
+  myFunction() {
+    var x = document.getElementById("myInput").nodeValue;
+    document.getElementById("demo").innerHTML = x;
   }
 
 }

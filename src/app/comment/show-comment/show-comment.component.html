@@ -1,8 +1,23 @@
-<app-header></app-header>
- <section class="shoping-cart spad" *ngIf="currentUser.status=='ADMIN'">
+<section class="shoping-cart spad" *ngIf="currentUser.status=='ADMIN'">
+    <app-header></app-header>
     <div class="container">
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-3 col-md-5">
+                <div class="sidebar">
+                    <div class="sidebar__item">
+                        <h4>Department</h4>
+                        <ul>
+                            <li><a href="#">Acceuil</a></li>
+                            <li><a href="#">Products</a></li>
+                            <li><a routerLink="/showEvents" >events</a></li>
+                            <li><a href="#">stores</a></li>
+                            <li><a href="#">disconnect</a></li>
+                          
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-9 col-md-7">
                 <div class="shoping__cart__table">
                     <table>
                         <thead>
@@ -50,6 +65,9 @@
                           <td class="shoping__cart__item" >
                             <img src="assets/img/user.png" alt="">
                             <h5>{{comment.content}}</h5>
+                            <br>
+                            <h5 style="margin-left: 90px">{{comment.creationDate}}</h5>
+
                           </td>
                       </tr>
 
@@ -61,7 +79,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="contact__form__title">
-                    <app-add-comment></app-add-comment>
+                   
                 </div>
             </div>
         </div>

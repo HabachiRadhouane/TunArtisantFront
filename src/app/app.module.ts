@@ -32,6 +32,10 @@ import { DeleteInscriptioneventComponent } from './inscriptionevent/delete-inscr
 import { JwtInterceptor } from './User/auth.interceptor';
 import { ProfileComponent } from './User/profile/profile.component';
 
+import { EditInscriptioneventComponent } from './inscriptionevent/edit-inscriptionevent/edit-inscriptionevent.component';
+import { DatePipe } from '@angular/common';
+
+
 
 
 @NgModule({
@@ -66,7 +70,9 @@ import { ProfileComponent } from './User/profile/profile.component';
     StoreDetailsComponent,
     EventDetailsComponent,
     DeleteInscriptioneventComponent,
-    ProfileComponent
+    ProfileComponent,
+    EditInscriptioneventComponent
+
 
 
 
@@ -84,9 +90,12 @@ import { ProfileComponent } from './User/profile/profile.component';
     {
       provide:HTTP_INTERCEPTORS,
       useClass:JwtInterceptor,
-      multi:true
+      multi:true,
+
     }
   ],
+
+//  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

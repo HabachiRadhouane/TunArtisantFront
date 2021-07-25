@@ -2,7 +2,7 @@ export class Comment {
 
     id: number;
     content: string;
-    creationDate: string;
+    creationDate: any;
     user: string;
     event: string;
 }
