@@ -23,7 +23,8 @@
             </ul>
         </div>
         <div class="header__top__right__auth">
-            <a href="#"><i class="fa fa-user"></i> Login</a>
+            <a href="#"><i class="fa fa-user" onclick="logout()"></i> Logout</a>
+            <a href="#">welcome {{currentUser.username}} </a>
         </div>
     </div>
     <nav class="humberger__menu__nav mobile-menu">
@@ -51,7 +52,7 @@
     </div>
     <div class="humberger__menu__contact">
         <ul>
-            <li><i class="fa fa-envelope"></i> hello@colorlib.com</li>
+            <li><i class="fa fa-envelope"></i>  {{currentUser.email}}</li>
             <li>Free Shipping for all Order of $99</li>
         </ul>
     </div>
@@ -66,7 +67,7 @@
                 <div class="col-lg-6 col-md-6">
                     <div class="header__top__left">
                         <ul>
-                            <li><i class="fa fa-envelope"></i> hello@colorlib.com</li>
+                            <li><i class="fa fa-envelope"></i>  {{currentUser.email}}</li>
                             <li>Free Shipping for all Order of $99</li>
                         </ul>
                     </div>
@@ -84,12 +85,13 @@
                             <div>English</div>
                             <span class="arrow_carrot-down"></span>
                             <ul>
-                                <li><a href="#">Spanis</a></li>
+                                <li><a href="#">Spanish</a></li>
                                 <li><a href="#">English</a></li>
                             </ul>
                         </div>
                         <div class="header__top__right__auth">
-                            <a href="#"><i class="fa fa-user"></i> Login</a>
+                            <a href="#"><i class="fa fa-user" onclick="logout()"></i> Logout</a>
+                            <a href="#">welcome {{currentUser.username}} </a>
                         </div>
                     </div>
                 </div>
@@ -151,10 +153,10 @@
                     </div>
                     <ul>
                         <li><a routerLink="/DashboardUser">Page Users</a></li>
-                        <li><a href="#">Page Products</a></li>
-                        <li><a href="#">Page Event</a></li>
-                        <li><a href="#">Page Stores</a></li>
-                        <li><a href="#">logout</a></li>
+                        <li><a routerLink="/showProducts">Page Products</a></li>
+                        <li><a routerLink="/showEvents">Page Event</a></li>
+                        <li><a routerLink="/showStores">Page Stores</a></li>
+                        <li><a href="#"><i  onclick="logout()"></i> Logout</a></li>
                     
                     </ul>
                 </div>
@@ -164,12 +166,15 @@
                     <div class="hero__search__form">
                         <form action="#">
                             <div class="hero__search__categories">
-                                Serach User
+                                Search User
                                 <span class="arrow_carrot-down"></span>
                             </div>
-                            <input type="text" placeholder="What do yo u need?">
+                            <input  placeholder="What do yo u need?" >
                             <button type="submit" class="site-btn">SEARCH</button>
+                            
                         </form>
+                        
+                     
                     </div>
                     <div class="hero__search__phone">
                         <div class="hero__search__phone__icon">
@@ -183,11 +188,16 @@
                   
                 </div>
                 <br>
+             
                 <div class="hero__item set-bg">
                     <div class="col-lg-12">
                         <section >
                             <div class="row">
                                         <div >
+                                            <div class="form-group mb-4">
+                                                <input class="form-control" type="text" [(ngModel)]="searchText" placeholder="Search">
+                                                  </div>
+
                                             <table style="width:100%"  border-spacing='15px'>
                                                 <thead>
                                                     <tr>
@@ -202,7 +212,7 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <tr *ngFor="let user of userList">
+                                                    <tr *ngFor="let user of userList | filter:searchText">
                                                         <td class="shoping__cart__quantity" padding='6px'> 
                                                             <img src="assets/img/user.png" alt="">
                                                         </td>
@@ -226,7 +236,7 @@
                                                         </td>
                                                         <td class="shoping__cart__total" padding='6px'>
                                                             <div class="col-md-3">
-                                                            <i class="fa fa-check btn btn-primary btn-warning " routerLink="/DashboardUser" (click)="acceptUser(user.id,user)"></i>
+                                                            <button class="fa fa-check btn btn-primary btn-warning " routerLink="/DashboardUser" (click)="acceptUser(user.id,user)"  [disabled]="(user.status ==confirmed)" ></button>
                                                             
                                                             </div>
                                                         </td>

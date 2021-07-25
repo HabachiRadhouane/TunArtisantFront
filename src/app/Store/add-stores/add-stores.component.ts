@@ -9,6 +9,7 @@ import { UsersService } from './../../User/users.service';
   styleUrls: ['./add-stores.component.css']
 })
 export class AddStoresComponent implements OnInit {
+  logo:any;
 
   constructor(public storeService: StoreService,public UsersService: UsersService, private router:Router) { }
 
@@ -18,7 +19,13 @@ export class AddStoresComponent implements OnInit {
 
   addStore(store: Store) {
     console.log(store);
+    store.logo=this.logo; 
     this.storeService.addStore(store).subscribe();
+  }
+
+  selectFile(event) {
+    let loadedImage = event.currentTarget;
+    this.logo = event.target.files[0].name;
   }
 
 

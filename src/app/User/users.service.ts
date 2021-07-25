@@ -25,13 +25,16 @@ export class UsersService {
     id: null,
     email: '',
     username: '',
-    roles : '',
+    roles : [''],
     password:'',
     status:'unconfirmed'
   }
 
+ 
 
-
+  getUsers() : Observable<User[]>{
+    return this.httpClient.get<User[]>("http://127.0.0.1:8000/api/users"  , { params: {publique: "Confirmed"}});
+  }
 
   getAllUsers1() {
   return  this.httpClient.get<User[]>(this.usertUrl+"api/users").subscribe( data =>
@@ -66,6 +69,13 @@ export class UsersService {
    getUserByUsername(username){
     return this.httpClient.get<User>(this.usertUrl+"api/users"+username);
    }
+   getUserByEmail(email: string) {
+    return this.httpClient.get(this.usertUrl + 'user/getUserByEmail/' + email);
+  }
+
+  register(user: User): Observable<User> {
+    return this.httpClient.post<User>(this.usertUrl+"register", user);
+  }
 
    
 }

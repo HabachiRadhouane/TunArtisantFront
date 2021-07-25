@@ -8,13 +8,26 @@
   <script src="js/owl.carousel.min.js"></script>
   <script src="js/main.js"></script>
   <app-headerstore></app-headerstore>
+  <br>
+
+  
+ 
 <div class=row>
-    <div class="col-sm-7"></div>
-    
-    <div  *ngIf="currentUser.status!='User'" >
-        <a routerLink="/AddStore" class="blog__btn">Add Store <span class="arrow_right"></span></a>
-    
+
+    <div class="col-lg-2 "></div>
+    <div   >
+        <button routerLink="/profile" style="background: #7fad39;" class="hero__categories btn btn-success btn-lg btn-block">  <span class="fa fa-user "></span> Show my profile</button>
     </div>
+    <div class="col-lg-2 "></div>
+    <div  *ngIf="Role=='ADMIN'" >
+        <button routerLink="/DashboardUser" style="background: #7fad39;" class="hero__categories btn btn-success btn-lg btn-block">  <span class="fa fa-tachometer "></span> Dashboard Admin</button>
+    </div>
+
+    <div class="col-lg-2 "></div>
+    <div  *ngIf="Role!='USER'" >
+        <button routerLink="/AddStore" style="background: #7fad39;" class="hero__categories btn btn-success btn-lg btn-block"> Please Add your store <span class="arrow_right"></span></button>
+    </div>
+   
 </div>
   <section class=" breadcrumb-section blog spad">
     <div class="container">
@@ -22,20 +35,18 @@
             <div class="col-lg-4 col-md-5">
                 <div class="blog__sidebar">
                     <div class="blog__sidebar__search">
-                        <form action="#">
-                            <input type="text" placeholder="Search...">
+                        <div action="#">
+                            <input  type="text" [(ngModel)]="searchText" placeholder="Search...">
                             <button type="submit"><span class="icon_search"></span></button>
-                        </form>
+                        </div>
                     </div>
-                    <div class="blog__sidebar__item">
-                        <h4>Categories</h4>
+                    <div class="blog__sidebar__item" >
+                        <h4>Stores</h4>
+                    <div *ngFor="let store of storeList |filter: searchText">
                         <ul>
-                            <li><a href="#">All</a></li>
-                            <li><a href="#">Beauty (20)</a></li>
-                            <li><a href="#">Food (5)</a></li>
-                            <li><a href="#">Life Style (9)</a></li>
-                            <li><a href="#">Travel (10)</a></li>
+                            <li><a href="#"> {{store.titre}} </a></li>
                         </ul>
+                    </div>
                     </div>
                     <div class="blog__sidebar__item">
                         <h4>Recent News</h4>
@@ -87,14 +98,16 @@
                     <div class="col-lg-6 col-md-6 col-sm-6" *ngFor="let store of storeList">
                         <div class="blog__item">
                             <div class="blog__item__pic">
-                                <img src="assets/img/blog/blog-2.jpg" alt="">
+                                <img width="214" height="200px" src="{{imagePath+store.logo}}">
+                    
                             </div>
                             <div class="blog__item__text">
                                 <ul>
-                                    <li><i class="fa-solid fa-location"></i> {{store.adresse}}</li>
-                                    <li><i class="fa-solid fa-phone"></i>{{store.logo}}</li>
-                                      <li *ngIf="currentUser.status!='User'"><a routerLink="/EditStore/{{store.id}}"><i class="fa fa-pencil"></i></a></li>
-                                      <li *ngIf="currentUser.status!='User'"><a (click)="deleteStore(store.id)"><i class="fa fa-trash"></i></a></li>
+                                    <li><i class="fa-solid fa-location"></i> {{store.professionalEmail}}</li>
+                                    <li *ngIf="Role =='ARTISAN' && store.professionalEmail==currentUser.email || Role =='ADMIN' " >
+                                          <a routerLink="/EditStore/{{store.id}}"><i class="fa fa-pencil"></i></a></li>
+                                          
+                                    <li *ngIf="Role=='ADMIN'"><a (click)="deleteStore(store.id)"><i class="fa fa-trash"></i></a></li>
                                      
                                 </ul>
                                 <h5><a href="#"> {{store.titre}} </a></h5>
@@ -119,29 +132,3 @@
   
 </section>
 
-
-  <table id="Stores">
-    <tr>
-        <th>title</th>
-        <th>description</th>
-        <th>password</th>
-        <th>Adress</th>
-        <th>Email</th>
-    </tr>
-    <tr *ngFor="let store of storeList">
-      <td>{{store.titre}}</td>
-      <td>{{store.description}}</td>
-      <td>{{store.logo}}</td>
-      <td>{{store.adresse}}</td>
-      <td>{{store.professionalEmail}}</td>
-      <td>
-        <button  class="btn btn-primary btn-warning" (click)="deleteStore(store.id)">delete</button>
-          <i></i>
-      </td>
-
-      <td>
-        <button class="btn btn-success btn-lg btn-block" routerLink="/EditStore" type="submit" value="Edit" (click)="editStore(store)">edit</button>
-      </td>
-    </tr>
-  
-  </table>

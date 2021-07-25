@@ -17,13 +17,22 @@
                     <h3>{{event.title}}</h3>
                     <div class="product__details__price">{{event.description}}</div>
                     <p>{{event.location}}</p>
-                    <a class="primary-btn" (click)="addInscriptionevent()">Participate</a>
+                    <button class="primary-btn" [disabled]="(newInscriptionEvent.state == clicked || newInscriptionEvent.state == clicked2)" (click)="addInscriptionevent(); addingInput = true" >Participate</button>
+                    <div *ngIf="newInscriptionEvent.state == clicked2">
+                        <p name="hidden"> Your invitation was accepted</p>
+                    </div>
+                    <div *ngIf="addingInput===true">
+                        <p name="hidden">Wait until Admin Accept Your Participation</p>
+                    </div>
 
                 </div>
             </div>
         </div>
     </div>
+    <app-add-comment [eventid]="event.id"></app-add-comment>
     <app-show-comment></app-show-comment>
+   
 </section>
+
 <!-- Product Details Section End -->
 <app-footer></app-footer>
