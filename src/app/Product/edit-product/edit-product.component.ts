@@ -40,8 +40,10 @@ export class EditProductComponent implements OnInit {
   getProductById(id){
     return this.httpClient.get<Product>(this.productService.baseURL+"api/products/"+id).subscribe(
       (data)=> {
-        // console.log(data);
         this.product = data ;
+        this.product.category=data['category']['@id'];
+        this.product.store=data['store']['@id'];
+        console.log(this.product);
       }
     );
   }

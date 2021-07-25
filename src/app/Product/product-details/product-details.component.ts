@@ -13,7 +13,7 @@ import { Product } from 'src/app/Models/product.model';
 export class ProductDetailsComponent implements OnInit {
   productList: Product[]=[] ;
   product : Product = new Product();
-  id;
+  id:number;
   currentUser : User;
   constructor(public productService: ProductService, private router:Router,private activatedRoute:ActivatedRoute, private httpClient: HttpClient) { }
 
@@ -24,7 +24,7 @@ export class ProductDetailsComponent implements OnInit {
     console.log(this.id)
     this.getProductById(this.id)
   }
-  getProductById(id){
+  getProductById(id:number){
     return this.httpClient.get<Product>(this.productService.baseURL+"api/products/"+id).subscribe(
       (data)=> {
         this.product = data ;

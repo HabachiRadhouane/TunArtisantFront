@@ -3,6 +3,7 @@ import { Product } from './../Models/product.model';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Store } from '../Models/store.model';
 
 
 
@@ -20,14 +21,11 @@ export class ProductService {
     description: '',
     price: 0,
     quantity: 0,
-    category: new Category,
+    category: '',
     commands : [],
     store: ''
   }
 
-  // getAllProducts(): Observable<Product[]>{
-  //   return this.httpClient.get<Product[]>(this.baseURL+"api/products");
-  // }
 
   getAllProducts() {
     return this.httpClient.get<Product[]>(this.baseURL+"api/products");
@@ -42,7 +40,4 @@ export class ProductService {
   addProduct(product: Product): Observable<Product> {
     return this.httpClient.post<Product>(this.baseURL+"api/products", product);
   }
-  // getProductByID(id){
-  //   return this.allProducts.find(x => x.id === id);
-  // }
 }

@@ -1,5 +1,87 @@
 <app-header></app-header>
 
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 text-center">
+      <form #form="ngForm" form class="form-horizontal">
+        <div class="table">
+          <div class="row">
+            <div class="col-lg-3 col-md-5">
+              <div class="sidebar">
+                  <div class="sidebar__item">
+                      <h4>Department</h4>
+                      <ul>
+                          <li><a href="#">Acceuil</a></li>
+                          <li><a routerLink="/showProducts">Products</a></li>
+                          <li><a routerLink="/showEvents" >Events</a></li>
+                          <li><a href="#">Stores</a></li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-9 col-md-7">
+            <div class="col-lg-12 text-center form-group">
+              <h2>ADD A PRODUCT</h2>
+            </div>
+
+            <div class="col-lg-12 text-center form-group">
+              <input placeholder="First Name" name="title" class="form-control ng-untouched ng-pristine ng-valid"  [(ngModel)]="newProduct.title" #reqfname="ngModel" required minlength="3">
+              <div *ngIf="reqfname.invalid && reqfname.touched">
+                <div class="alert alert-danger" *ngIf="reqfname.errors.required">Field required</div>
+              </div>
+            </div><br>
+            <div class="col-lg-12 text-center form-group">
+              <textarea  placeholder="description" name="description"  class="form-control ng-untouched ng-pristine ng-valid" [(ngModel)]="newProduct.description" #reqlname="ngModel" required minlength="3"></textarea>
+              <div *ngIf="reqlname.invalid && reqlname.touched">
+                <div class="alert alert-danger" *ngIf="reqlname.errors.required">Field required</div>
+              </div>
+            </div>
+            <div class="col-lg-12 text-center form-group">
+              <input name="startDate" class="form-control ng-untouched ng-pristine ng-valid"  type="number" [(ngModel)]="newProduct.price" #reqfname="ngModel" required minlength="3">
+              <div *ngIf="reqfname.invalid && reqfname.touched">
+                <div class="alert alert-danger" *ngIf="reqfname.errors.required">Field required</div>
+              </div>
+            </div>
+            <div class="col-lg-12 text-center form-group">
+              <input name="startDate" type="number" class="form-control ng-untouched ng-pristine ng-valid"  [(ngModel)]="newProduct.quantity" #reqfname="ngModel" required minlength="3">
+              <div *ngIf="reqfname.invalid && reqfname.touched">
+                <div class="alert alert-danger" *ngIf="reqfname.errors.required">Field required</div>
+              </div>
+            </div>
+            <div class="col-lg-12 text-center form-group">
+              <select class="form-select form-select-lg mb-3 form-control ng-untouched ng-pristine ng-valid" name="sportType" aria-label=".form-select-lg example" [(ngModel)]="newProduct.category" #reqsport="ngModel" required minlength="3">
+                <option *ngFor="let category of allCategories" value="/api/categories/{{category.id}}">
+                  {{category.title}}
+                </option>
+              </select>
+              <div *ngIf="reqfname.invalid && reqfname.touched">
+                <div class="alert alert-danger" *ngIf="reqfname.errors.required">Field required</div>
+              </div>
+            </div>
+            <div class="col-lg-12 text-center form-group">
+              <select class="form-select form-select-lg mb-3 form-control ng-untouched ng-pristine ng-valid" name="sportType" aria-label=".form-select-lg example" [(ngModel)]="newProduct.store" #reqsport="ngModel" required minlength="3">
+                <option *ngFor="let store of allStores" value="/api/stores/{{store.id}}">
+                  {{store.titre}}
+                </option>
+              </select>
+              <div *ngIf="reqfname.invalid && reqfname.touched">
+                <div class="alert alert-danger" *ngIf="reqfname.errors.required">Field required</div>
+              </div>
+            </div>
+
+          <div class="row">
+            <div class="col-lg-12 text-center form-group">
+              <input class="btn btn-success btn-lg btn-block" type="submit" value="Join" (click)="addProduct(newProduct)" >
+            </div>
+          </div>
+         </div>
+        </div>
+      </div>
+      </form>
+    </div>
+
+  </div>
+</div>
 
 <app-footer></app-footer>
 

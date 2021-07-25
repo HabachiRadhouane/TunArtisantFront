@@ -127,7 +127,7 @@
                   </div>
                   <div class="row">
                       <div class="col-lg-4 col-md-6 col-sm-6" *ngFor="let product of productList">
-                        <div *ngIf="product.store == '/api/stores/'+store.id">
+                        <div *ngIf="'/api/stores/'+product.store['id'] == '/api/stores/'+store.id">
                           <div class="product__item">
                               <div class="product__item__pic set-bg" style="background-image: url('assets/img/product/product-1.jpg');">
                                   <ul class="product__item__pic__hover">
