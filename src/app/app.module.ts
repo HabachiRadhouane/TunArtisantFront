@@ -91,8 +91,10 @@ import { DatePipe } from '@angular/common';
       provide:HTTP_INTERCEPTORS,
       useClass:JwtInterceptor,
       multi:true,
+      
 
-    }
+    },
+    DatePipe
   ],
 
 //  providers: [DatePipe],
