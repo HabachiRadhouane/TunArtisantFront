@@ -24,9 +24,12 @@ import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './Login/login/login.component';
 import { HeaderstoreComponent } from './Store/headerstore/headerstore.component';
 import { StoreDetailsComponent} from './Store/store-details/store-details.component';
+import { AuthGuard } from './User/auth.guard';
+import { ProfileComponent } from './User/profile/profile.component';
 
 
 const routes: Routes = [
+  { path: '', redirectTo: '/Login', pathMatch: 'full' },
   { path: 'showEvents', component: ShowEventsComponent },
   { path: 'editEvent', component: EditEventComponent },
   { path: 'showinscriptionevent', component: ShowInscriptioneventComponent },
@@ -36,12 +39,20 @@ const routes: Routes = [
   { path: 'addEvents', component: AddEventComponent },
   { path: 'addComment', component: AddCommentComponent },
   { path: 'showUsers', component: ShowUsersComponent },
-  { path: 'showProducts', component: ShowProductsComponent },
-  { path: 'addProduct', component: AddProductComponent },
-  { path: 'editProduct/:id', component: EditProductComponent },
-  { path: 'addUser', component: AddUserComponent },
-  { path: 'DashboardUser', component: DeleteUserComponent },
-  { path: 'showStores', component: ShowStoresComponent },
+  { path: 'showProducts', component: ShowProductsComponent,
+  canActivate: [AuthGuard], },
+  { path: 'addProduct', component: AddProductComponent,
+  canActivate: [AuthGuard],
+ },
+  { path: 'editProduct/:id', component: EditProductComponent,
+  canActivate: [AuthGuard], },
+  { path: 'addUser', component: AddUserComponent,
+  canActivate: [AuthGuard], },
+  { path: 'DashboardUser', component: DeleteUserComponent,
+  canActivate: [AuthGuard], },
+  { path: 'showStores', component: ShowStoresComponent ,
+     canActivate: [AuthGuard],
+  },
   { path: 'AddStore', component: AddStoresComponent },
   { path: 'productDetails/:id', component: ProductDetailsComponent },
   { path: 'EditUser', component: EditUserComponent },
@@ -49,7 +60,8 @@ const routes: Routes = [
   { path: 'Login', component: LoginComponent },
   { path: 'headerstore', component: HeaderstoreComponent },
   { path: 'StoreDetails/:id', component: StoreDetailsComponent },
-  { path: 'showComments/:id', component: ShowCommentComponent}
+  { path: 'showComments/:id', component: ShowCommentComponent},
+  { path: 'profile', component: ProfileComponent}
 
 
 

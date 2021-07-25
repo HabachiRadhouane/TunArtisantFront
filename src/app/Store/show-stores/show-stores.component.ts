@@ -3,6 +3,7 @@ import { StoreService } from '../store.service';
 import { Store } from 'src/app/Models/store.model';
 import { Router } from '@angular/router';
 import { User } from './../../Models/user.model';
+import { UsersService } from './../../User/users.service';
 
 @Component({
   selector: 'app-show-stores',
@@ -12,21 +13,23 @@ import { User } from './../../Models/user.model';
 export class ShowStoresComponent implements OnInit {
   storeList: Store[]=[] ;
 
-  constructor(public storeService: StoreService, private router:Router) { }
+  constructor(public storeService: StoreService,public UsersService: UsersService, private router:Router) { }
   @Input() editClickedInput : any
-  currentUser = new User();
+  currentUser 
+  Role
   user : User
+  imagePath="../../assets/img/Store/"
+ 
 
   ngOnInit(): void {
+  
     this.getAllStores();
-    this.currentUser.id = 11;
-    this.currentUser.email="priest123@hotmail.fr"
-    this.currentUser.username="ArgubiAmel@gmail.com"
-    this.currentUser.password="aaaa"
-    this.currentUser.status = "ADMIN"
 
-    sessionStorage.setItem('userDetails', JSON.stringify(this.currentUser));
-    
+    this.currentUser= JSON.parse(localStorage.getItem('user'));
+    console.log(this.currentUser.email); 
+  
+    this.Role= localStorage.getItem('roles');
+    console.log(this.Role);  
   }
 
 
@@ -35,6 +38,7 @@ export class ShowStoresComponent implements OnInit {
     this.storeService.getAllStores().subscribe( data => 
       { this.storeList = data['hydra:member'];
       console.log(this.storeList);
+
   });
   }
 

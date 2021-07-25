@@ -6,6 +6,7 @@ import { Store } from 'src/app/Models/store.model';
 import { User } from 'src/app/Models/user.model';
 import { ProductService } from 'src/app/Product/product.service';
 import { UsersService } from 'src/app/User/users.service';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-add-user',
@@ -22,10 +23,11 @@ export class AddUserComponent implements OnInit {
   id;
   username;
   currentUser : User;
-  constructor(public userService: UsersService, private router:Router,private activatedRoute:ActivatedRoute, private httpClient: HttpClient) { }
+  constructor(public userService: UsersService, private formBuilder: FormBuilder, private router:Router,private activatedRoute:ActivatedRoute, private httpClient: HttpClient) { }
   selectedRole:Array<any> ;
   userList: User[]=[] ;
   newUser : User = new User();
+  registerForm : FormGroup
 
   //roles = ['ADMIN', 'ARTISAN','USER'];
   roles:any[]= [
@@ -34,9 +36,24 @@ export class AddUserComponent implements OnInit {
     {code:'USER',role:'USER'},
   ];
   ngOnInit(): void {
-    this.getAllUsers();
-    this.id = this.activatedRoute.snapshot.params.id
-    console.log(this.id)
+    
+    this.registerForm = this.formBuilder.group({
+      email: ['', Validators.required],
+      roles: ['', Validators.required],
+      password: ['', Validators.required],
+      status: ['Unconfirmed'],
+
+  });
+  }
+    // this.getAllUsers();
+    // this.id = this.activatedRoute.snapshot.params.id
+    // console.log(this.id)
+
+
+  doRegister(user: User) {
+    this.userService.register(user).subscribe(data => {
+       console.log(data);
+    })
   }
 
   addUser(user: User) {

@@ -20,6 +20,7 @@ export class EditStoreComponent implements OnInit {
   allUsers : User[];
   store : Store = new Store();
   id;
+  logo:any;
   ngOnInit(): void {
   this.getAllUsers();
   this.id = this.activatedRoute.snapshot.params.id
@@ -35,6 +36,7 @@ export class EditStoreComponent implements OnInit {
   }
   editStore(store:Store){
     console.log(store);
+    store.logo=this.logo; 
     this.storeService.updateStore(store).subscribe();
     this.editClickedFromEdit=Math.random();
   }
@@ -54,6 +56,12 @@ export class EditStoreComponent implements OnInit {
         this.store = data ;
       }
     );
+  }
+
+
+  selectFile(event) {
+    let loadedImage = event.currentTarget;
+    this.logo = event.target.files[0].name;
   }
 
 }

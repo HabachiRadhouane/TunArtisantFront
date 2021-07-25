@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule , ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ShowEventsComponent } from './Event/show-events/show-events.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ShowUsersComponent } from './User/show-users/show-users.component';
 import { ShowProductsComponent } from './Product/show-products/show-products.component';
 import { AddProductComponent } from './Product/add-product/add-product.component';
@@ -29,6 +29,8 @@ import { HeaderstoreComponent } from './Store/headerstore/headerstore.component'
 import { StoreDetailsComponent } from './Store/store-details/store-details.component';
 import { EventDetailsComponent } from './Event/event-details/event-details.component';
 import { DeleteInscriptioneventComponent } from './inscriptionevent/delete-inscriptionevent/delete-inscriptionevent.component';
+import { JwtInterceptor } from './User/auth.interceptor';
+import { ProfileComponent } from './User/profile/profile.component';
 
 
 
@@ -63,7 +65,8 @@ import { DeleteInscriptioneventComponent } from './inscriptionevent/delete-inscr
     HeaderstoreComponent,
     StoreDetailsComponent,
     EventDetailsComponent,
-    DeleteInscriptioneventComponent
+    DeleteInscriptioneventComponent,
+    ProfileComponent
 
 
 
@@ -74,9 +77,16 @@ import { DeleteInscriptioneventComponent } from './inscriptionevent/delete-inscr
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide:HTTP_INTERCEPTORS,
+      useClass:JwtInterceptor,
+      multi:true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
