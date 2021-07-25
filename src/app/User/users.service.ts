@@ -30,8 +30,11 @@ export class UsersService {
     status:'unconfirmed'
   }
 
+ 
 
-
+  getUsers() : Observable<User[]>{
+    return this.httpClient.get<User[]>("http://127.0.0.1:8000/api/users"  , { params: {publique: "Confirmed"}});
+  }
 
   getAllUsers1() {
   return  this.httpClient.get<User[]>(this.usertUrl+"api/users").subscribe( data =>

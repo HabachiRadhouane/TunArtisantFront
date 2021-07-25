@@ -27,6 +27,8 @@ import { HeaderstoreComponent } from './Store/headerstore/headerstore.component'
 import { StoreDetailsComponent} from './Store/store-details/store-details.component';
 import { AuthGuard } from './User/auth.guard';
 import { ProfileComponent } from './User/profile/profile.component';
+import { MapComponent } from './User/map/map.component';
+
 
 
 const routes: Routes = [
@@ -67,7 +69,10 @@ const routes: Routes = [
   { path: 'headerstore', component: HeaderstoreComponent },
   { path: 'StoreDetails/:id', component: StoreDetailsComponent },
   { path: 'showComments/:id', component: ShowCommentComponent},
-  { path: 'profile', component: ProfileComponent}
+  { path: 'profile', component: ProfileComponent},
+  { path: 'map', component: MapComponent},
+
+
 
 
 

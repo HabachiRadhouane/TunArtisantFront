@@ -11,11 +11,10 @@
                     <div class="sidebar__item">
                         <h4>Dashboard</h4>
                         <ul>
-                          <li><a routerLink="/DashboardUser">Page Users</a></li>
-                          <li><a href="#">Page Products</a></li>
-                          <li><a href="#">Page Event</a></li>
-                          <li><a href="#">Page Stores</a></li>
-                          <li><a href="#">logout</a></li>
+                          <li><a routerLink="/showStores">Page Stores</a></li>
+                          <li><a routerLink="/showProducts">Page Products</a></li>
+                        <li><a routerLink="/showEvents">Page Event</a></li>
+                        <li><a href="#"><i  onclick="logout()"></i> Logout</a></li>
                           
                         </ul>
                     </div>
@@ -78,7 +77,7 @@
               
             <div class="row">
               <div class="col-lg-12 text-center form-group">
-                <input class="btn btn-success btn-lg btn-block" type="submit" value="Join" (click)="addStore(storeService.newStore)">
+                <input class="btn btn-success btn-lg btn-block"  routerLink="/showStores" type="submit" value="Add" (click)="addStore(storeService.newStore)">
             </div>
             </div>
            </div>

@@ -24,7 +24,7 @@
     </div>
 
     <div class="col-lg-2 "></div>
-    <div  *ngIf="Role!='User'" >
+    <div  *ngIf="Role!='USER'" >
         <button routerLink="/AddStore" style="background: #7fad39;" class="hero__categories btn btn-success btn-lg btn-block"> Please Add your store <span class="arrow_right"></span></button>
     </div>
    
@@ -35,14 +35,14 @@
             <div class="col-lg-4 col-md-5">
                 <div class="blog__sidebar">
                     <div class="blog__sidebar__search">
-                        <form action="#">
-                            <input type="text" placeholder="Search...">
+                        <div action="#">
+                            <input  type="text" [(ngModel)]="searchText" placeholder="Search...">
                             <button type="submit"><span class="icon_search"></span></button>
-                        </form>
+                        </div>
                     </div>
                     <div class="blog__sidebar__item" >
                         <h4>Stores</h4>
-                    <div *ngFor="let store of storeList">
+                    <div *ngFor="let store of storeList |filter: searchText">
                         <ul>
                             <li><a href="#"> {{store.titre}} </a></li>
                         </ul>

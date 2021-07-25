@@ -17,6 +17,7 @@ export class DeleteUserComponent implements OnInit {
   confirmed;
   currentUser 
   Role
+  searchText: string;
 
   constructor(public UserService: UsersService ,private httpClient: HttpClient, public LoginService: LoginService) { }
   usertUrl:string =  'http://127.0.0.1:8000/';

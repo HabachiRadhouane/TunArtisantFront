@@ -34,6 +34,9 @@ import { ProfileComponent } from './User/profile/profile.component';
 
 import { EditInscriptioneventComponent } from './inscriptionevent/edit-inscriptionevent/edit-inscriptionevent.component';
 import { DatePipe } from '@angular/common';
+import { MapComponent } from './User/map/map.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
 
 
 
@@ -71,7 +74,9 @@ import { DatePipe } from '@angular/common';
     EventDetailsComponent,
     DeleteInscriptioneventComponent,
     ProfileComponent,
-    EditInscriptioneventComponent
+    EditInscriptioneventComponent,
+    MapComponent,
+
 
 
 
@@ -84,7 +89,8 @@ import { DatePipe } from '@angular/common';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    Ng2SearchPipeModule
   ],
   providers: [
     {
@@ -96,8 +102,10 @@ import { DatePipe } from '@angular/common';
     },
     DatePipe
   ],
+ 
 
 //  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

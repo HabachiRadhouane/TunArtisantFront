@@ -19,7 +19,7 @@ export class ShowStoresComponent implements OnInit {
   Role
   user : User
   imagePath="../../assets/img/Store/"
- 
+  searchText: string;
 
   ngOnInit(): void {
   
